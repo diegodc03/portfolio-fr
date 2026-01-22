@@ -1,0 +1,142 @@
+
+
+
+.parent {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 8px;
+    width: 100%;
+}
+    
+.div1 {
+    grid-column: span 2 / span 2;
+}
+
+.div2 {
+    grid-row-start: 2;
+}
+
+.div3 {
+    grid-row-start: 2;
+}
+        
+
+/* --- DIV 2: LA TARJETA DE CONTACTO (Estilo Dark Card) --- */
+.contact-card {
+    background-color: #1a1a1a; /* Un gris muy oscuro, diferente al fondo negro */
+    padding: 40px;
+    border-radius: 30px;       /* Bordes muy redondeados como en la foto */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 300px;         /* Altura mínima para que respire */
+}
+
+.contact-card h3 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.contact-card p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #ccc; /* Texto grisáceo para leer mejor */
+    margin-bottom: 30px;
+    max-width: 90%;
+}
+
+.email-link {
+    color: #fff;
+    font-size: 1.2rem;
+    text-decoration: none;
+    font-weight: bold;
+    margin-bottom: auto; /* Empuja el estado hacia abajo */
+    display: inline-block;
+    border-bottom: 1px solid #555;
+    padding-bottom: 2px;
+    transition: color 0.3s;
+}
+
+.email-link:hover {
+    color: #ccc;
+    border-color: #fff;
+}
+
+/* El punto verde de estado */
+.status-indicator {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 40px;
+    font-size: 0.9rem;
+    color: #bbb;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    background-color: #2ecc71; /* Verde brillante */
+    border-radius: 50%;
+    box-shadow: 0 0 8px rgba(46, 204, 113, 0.6); /* Pequeño brillo */
+}
+
+/* --- DIV 3: ENLACES LATERALES --- */
+.social-links {
+    padding-top: 20px; /* Para alinear visualmente con el texto de la tarjeta */
+    display: flex;
+    flex-direction: column;
+}
+
+.social-links h4 {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    color: #888; /* Título sutil */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.links-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 25px; /* Separación entre links */
+}
+
+.links-list a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    transition: transform 0.2s;
+}
+
+.links-list a:hover {
+    transform: translateX(10px); /* Pequeña animación al pasar el mouse */
+}
+
+.icon {
+    font-size: 0.8rem;
+    font-weight: bold;
+    border: 1px solid #444;
+    padding: 5px 8px;
+    border-radius: 6px;
+    color: #888;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 768px) {
+    .parent {
+        grid-template-columns: 1fr; /* Una columna */
+        gap: 20px;
+    }
+    
+    .contact-card {
+        padding: 30px;
+    }
+}

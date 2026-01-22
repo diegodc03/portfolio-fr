@@ -1,0 +1,40 @@
+/* En styles.css (Global) */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgb(95, 86, 86);
+}
+
+/* En el CSS del componente padre (donde está el <main>) */
+.main, .content, .left-side {
+  width: 100%;
+  /* Asegúrate de no tener paddings aquí que encajonen el diseño */
+  padding: 0; 
+  margin: 0;
+}
+
+
+.component-general {
+  background-color: #685e5e;
+  width: 100%;
+}
+
+
+.section-general {
+    display: flex;
+    justify-content: center;
+    padding: 60px 12%;
+}
+
+
+.title-section {
+  font-family: 'Archivo Black', sans-serif;
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+}
+
+
+
