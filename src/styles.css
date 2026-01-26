@@ -23,6 +23,7 @@ html, body {
 
 
 .section-general {
+  background-color: rgb(30, 29, 29);
     display: flex;
     justify-content: center;
     padding: 60px 12%;

@@ -1,0 +1,28 @@
+<section class="education-section">
+  
+  <h2 class="main-title">FORMACIÓN ACADÉMICA</h2>
+
+  <div class="timeline-container">
+    
+    <div class="timeline-item" *ngFor="let item of education">
+      
+      <div class="timeline-date">
+        {{ item.period }}
+      </div>
+
+      <div class="timeline-content">
+        <h3 class="degree">{{ item.degree }}</h3>
+        <h4 class="institution">{{ item.institution }}</h4>
+        
+        <ul class="details-list">
+          <li *ngFor="let detail of item.details">
+            {{ detail }}
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>

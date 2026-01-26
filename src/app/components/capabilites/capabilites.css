@@ -1,0 +1,79 @@
+/* --- CONTENEDOR PRINCIPAL --- */
+.skills-section {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 60px 20px;
+  text-align: center; /* Centramos todo para que quede elegante */
+}
+
+/* --- TÍTULO (Estilo consistente con tus otras secciones) --- */
+.main-title {
+  font-size: 2rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: #ffffff;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+}
+
+/* --- SUBTÍTULO --- */
+.subtitle {
+  font-size: 1.1rem;
+  color: #9ca3af; /* Gris suave */
+  margin-top: 0;
+  margin-bottom: 50px; /* Separación con los tags */
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* --- CONTENEDOR DE TAGS (Flexbox) --- */
+.tags-container {
+  display: flex;
+  flex-wrap: wrap; /* Permite que bajen de línea si no caben */
+  justify-content: center; /* Centrados horizontalmente */
+  gap: 15px; /* Espacio entre etiquetas */
+}
+
+/* --- EL DISEÑO DE LA "PÍLDORA" (TAG) --- */
+.tag {
+  /* Tipografía */
+  color: #e5e7eb; /* Blanco roto */
+  font-size: 1rem;
+  font-weight: 500;
+  
+  /* Forma y Bordes (Clave de tu imagen) */
+  background-color: transparent; /* Fondo transparente */
+  border: 1px solid #374151; /* Borde gris oscuro y fino */
+  border-radius: 50px; /* Borde muy redondo (Pill shape) */
+  padding: 12px 24px; /* Espacio interior amplio */
+  
+  /* Transiciones */
+  transition: all 0.3s ease;
+  cursor: default; /* O 'pointer' si quieres que parezcan botones */
+}
+
+/* --- EFECTO HOVER (Al pasar el ratón) --- */
+.tag:hover {
+  border-color: #2563eb; /* Tu azul corporativo */
+  background-color: rgba(37, 99, 235, 0.1); /* Fondo azul muy sutil */
+  transform: translateY(-3px); /* Pequeña elevación */
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2); /* Sombra suave (Glow) */
+  color: #fff;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 600px) {
+  .tags-container {
+    gap: 10px;
+  }
+  
+  .tag {
+    font-size: 0.9rem;
+    padding: 10px 16px;
+  }
+  
+  .main-title {
+    font-size: 1.5rem;
+  }
+}

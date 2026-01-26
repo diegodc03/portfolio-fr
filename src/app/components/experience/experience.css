@@ -1,0 +1,94 @@
+/* --- ESTRUCTURA GENERAL (2 COLUMNAS) --- */
+.main-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* 50% y 50% */
+  gap: 40px; /* Espacio grande entre las dos columnas */
+  max-width: 1200px; /* Hacemos el ancho total más grande para que quepan las dos */
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.section-title {
+  color: #2563eb; /* Tu color azul */
+  border-bottom: 2px solid #e5e7eb;
+  padding-bottom: 10px;
+  margin-bottom: 30px;
+  font-size: 1.5rem;
+}
+
+/* --- ESTILO DEL TIMELINE (REUTILIZADO) --- */
+
+/* Ajustamos el item para que funcione en columnas más estrechas */
+.timeline-item {
+  display: grid;
+  /* Reducimos un poco el ancho de la fecha para que no coma espacio */
+  grid-template-columns: 90px 1fr; 
+  gap: 15px;
+  margin-bottom: 0; /* Quitamos márgenes extra */
+}
+
+.timeline-date {
+  text-align: right;
+  font-weight: bold;
+  color: #666;
+  font-size: 0.85rem;
+  padding-top: 5px;
+}
+
+.timeline-content {
+  padding-left: 25px; 
+  padding-bottom: 40px; 
+  border-left: 2px solid #ddd; 
+  position: relative;
+}
+
+/* El punto de la línea */
+.timeline-content::before {
+  content: '';
+  position: absolute;
+  left: -6px; 
+  top: 6px; 
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #fff; 
+  border: 2px solid #333; 
+  z-index: 1;
+}
+
+/* Quitar la línea del último elemento de CADA columna */
+.timeline-item:last-child .timeline-content {
+  border-left-color: transparent; 
+}
+.timeline-item:last-child .timeline-content::before {
+  border-color: #333; 
+}
+
+/* --- RESPONSIVE (MÓVIL) --- */
+@media (max-width: 900px) {
+  /* En tablets y móviles, pasamos a 1 sola columna */
+  .main-container {
+    grid-template-columns: 1fr; 
+    gap: 50px; /* Separar experiencia de voluntariado verticalmente */
+  }
+  
+  .timeline-item {
+     /* En móvil recuperamos espacio */
+    grid-template-columns: 100px 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  /* En móviles pequeños, la fecha va arriba */
+  .timeline-item {
+    grid-template-columns: 1fr;
+    gap: 5px;
+  }
+  .timeline-date {
+    text-align: left;
+    margin-left: 25px;
+  }
+  .timeline-content {
+     border-left: 2px solid #ddd;
+  }
+}

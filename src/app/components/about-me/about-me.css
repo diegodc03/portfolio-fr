@@ -9,6 +9,7 @@
 }
     
 .title-about-me {
+    color: #e5e7eb;
     grid-column: span 3 / span 3;
 }
 
@@ -35,6 +36,7 @@
 
 
 .div4 {
+    color: #e5e7eb;
     grid-column: span 2 / span 2;
     grid-row-start: 2;
     padding: 40px;

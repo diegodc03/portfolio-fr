@@ -1,0 +1,103 @@
+/* --- CONTENEDOR PRINCIPAL --- */
+.education-section {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  color: #e5e7eb; /* Texto base claro (casi blanco) */
+}
+
+/* --- TÍTULO (Estilo limpio y moderno) --- */
+.main-title {
+  font-size: 1.8rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #fff; /* Blanco puro */
+  margin-bottom: 40px; /* Separación con la línea de tiempo */
+  border-bottom: 1px solid #4b5563; /* Una línea sutil debajo del título */
+  padding-bottom: 10px;
+}
+
+/* --- ESTRUCTURA DE LA LÍNEA DE TIEMPO --- */
+.timeline-item {
+  display: grid;
+  /* 130px para la fecha | El resto para el contenido */
+  grid-template-columns: 130px 1fr; 
+  gap: 30px;
+  min-height: 100px; /* Altura mínima para que respire */
+}
+
+/* 1. LA FECHA (Izquierda) */
+.timeline-date {
+  text-align: right;
+  font-weight: bold;
+  font-size: 0.95rem;
+  color: #9ca3af; /* Gris claro, no azul oscuro */
+  padding-top: 5px; /* Para alinear con el título de la derecha */
+}
+
+/* 2. EL CONTENIDO (Derecha) */
+.timeline-content {
+  padding-left: 30px;
+  padding-bottom: 50px;
+  border-left: 2px solid #4b5563; /* La línea vertical (gris medio) */
+  position: relative;
+}
+
+/* 3. EL PUNTO (La bolita) */
+.timeline-content::before {
+  content: '';
+  position: absolute;
+  /* Cálculo para centrar: (Grosor línea / 2) - (Ancho bola / 2) */
+  left: -7px; 
+  top: 6px;   
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #1f2937; /* Fondo oscuro (del color de tu web) */
+  border: 2px solid #3b82f6; /* Borde AZUL BRILLANTE para destacar */
+}
+
+/* --- TEXTOS DEL CONTENIDO --- */
+.degree {
+  margin: 0;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #ffffff; /* Blanco */
+}
+
+.institution {
+  margin: 5px 0 15px 0;
+  font-size: 1rem;
+  color: #d1d5db; /* Gris muy claro */
+  font-style: italic;
+}
+
+.details-list {
+  padding-left: 18px;
+  margin: 0;
+}
+
+.details-list li {
+  margin-bottom: 8px;
+  color: #9ca3af; /* Gris suave para leer bien */
+  line-height: 1.5;
+}
+
+/* --- MOBILE (Responsive) --- */
+@media (max-width: 600px) {
+  .timeline-item {
+    grid-template-columns: 1fr; /* Una sola columna */
+    gap: 10px;
+  }
+  
+  .timeline-date {
+    text-align: left;
+    margin-left: 35px; /* Alineado con el texto */
+    color: #3b82f6; /* Azul en móvil para destacar la fecha */
+  }
+  
+  .timeline-content {
+    border-left: 2px solid #4b5563;
+  }
+}

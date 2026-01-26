@@ -1,0 +1,133 @@
+/* --- CONTENEDOR GENERAL --- */
+.achievements-section {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  color: #e5e7eb;
+}
+
+.main-title {
+  font-size: 1.8rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: #fff;
+  border-bottom: 1px solid #4b5563;
+  padding-bottom: 10px;
+  margin-bottom: 40px;
+}
+
+/* --- GRID LAYOUT --- */
+.grid-container {
+  display: grid;
+  /* Crea columnas automáticas de mínimo 300px */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+/* --- ESTILO DE LAS TARJETAS --- */
+.card {
+  background-color: #1f2937; /* Fondo oscuro tarjeta (ajusta a tu gusto) */
+  border: 1px solid #374151; /* Borde sutil */
+  border-radius: 12px;
+  padding: 25px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+  border-color: #2563eb; /* Tu azul al pasar el ratón */
+}
+
+.card h3 {
+  margin-top: 0;
+  color: #2563eb; /* Título en azul */
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #374151;
+  padding-bottom: 10px;
+}
+
+/* --- ESTILOS ESPECÍFICOS: PREMIOS --- */
+.award-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.award-icon {
+  font-size: 1.5rem;
+  background: rgba(37, 99, 235, 0.1); /* Azul transparente */
+  padding: 10px;
+  border-radius: 50%;
+}
+
+.award-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.award-title {
+  font-weight: bold;
+  color: #fff;
+}
+
+.award-org {
+  font-size: 0.85rem;
+  color: #9ca3af;
+}
+
+/* --- ESTILOS ESPECÍFICOS: IDIOMAS --- */
+.lang-item {
+  margin-bottom: 20px;
+}
+
+.lang-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+
+.lang-level {
+  color: #2563eb;
+}
+
+.progress-bar-bg {
+  width: 100%;
+  height: 8px;
+  background-color: #374151; /* Gris oscuro fondo barra */
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background-color: #2563eb; /* Azul relleno */
+  border-radius: 4px;
+}
+
+/* --- ESTILOS ESPECÍFICOS: CURSOS --- */
+.course-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.course-list li {
+  margin-bottom: 12px;
+  border-left: 2px solid #2563eb; /* Pequeña línea azul a la izquierda */
+  padding-left: 10px;
+}
+
+.course-name {
+  display: block;
+  font-weight: bold;
+  color: #e5e7eb;
+}
+
+.course-meta {
+  font-size: 0.85rem;
+  color: #9ca3af;
+}

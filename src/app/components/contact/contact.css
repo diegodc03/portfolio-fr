@@ -4,7 +4,6 @@
 .parent {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
     gap: 8px;
     width: 100%;
 }
@@ -24,6 +23,7 @@
 
 /* --- DIV 2: LA TARJETA DE CONTACTO (Estilo Dark Card) --- */
 .contact-card {
+    margin-right: 30px;
     background-color: #1a1a1a; /* Un gris muy oscuro, diferente al fondo negro */
     padding: 40px;
     border-radius: 30px;       /* Bordes muy redondeados como en la foto */
@@ -97,6 +97,49 @@
     letter-spacing: 1px;
 }
 
+.links-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-auto-rows: 1fr;
+    gap: 12px;
+}
+
+.contact-link-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 16px;
+    border-radius: 14px;
+    border: 1px solid #333;
+    background-color: #111;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    transition: transform 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.contact-link-card:hover {
+    transform: translateY(-2px);
+    border-color: #555;
+    background-color: #181818;
+}
+
+.contact-linkedin {
+    color: #0e76a8;
+}
+
+.contact-github {
+    color: #f5f5f5;
+}
+
+.contact-email {
+    color: #9cd67b;
+}
+
+.contact-calendar {
+    color: #ffb347;
+}
+
 .links-list {
     list-style: none;
     padding: 0;
@@ -128,15 +171,69 @@
     border-radius: 6px;
     color: #888;
 }
-
-/* --- RESPONSIVE --- */
+/* --- RESPONSIVE (Móvil y Tablet) --- */
 @media (max-width: 768px) {
-    .parent {
-        grid-template-columns: 1fr; /* Una columna */
-        gap: 20px;
-    }
     
+    .parent {
+        display: block;
+        gap: 30px; 
+    }
+
+    /* TÍTULO: Lo centramos y reducimos un poco el tamaño */
+    .title-section {
+        text-align: center;
+        font-size: 2.5rem;
+    }
+
+    /* DIV 2 (La Tarjeta): Ajustes para pantalla estrecha */
+    .div2 {
+        width: 100%; /* Aseguramos que ocupe todo el ancho */
+    }
+
     .contact-card {
-        padding: 30px;
+        padding: 25px;    /* Menos relleno interno para ganar espacio */
+        min-height: auto; /* Quitamos la altura mínima para que se ajuste al texto */
+    }
+
+    /* DIV 3 (Los Links): Cambiamos el diseño para móvil */
+    .div3 {
+        width: 100%;
+        /* Opcional: Centrar el bloque de links */
+        display: flex;
+        flex-direction: column;
+        align-items: center; 
+    }
+
+    .social-links {
+        padding-top: 0; /* Quitamos el padding superior que tenía en escritorio */
+        width: 100%;
+    }
+
+    .social-links h4 {
+        text-align: center; /* Centramos el título "Más sobre mí" */
+        margin-bottom: 20px;
+    }
+
+    /* TRUCO PRO: Convertir la lista vertical en una fila de botones en móvil */
+    .links-list {
+        flex-direction: row; /* Los pone uno al lado del otro */
+        flex-wrap: wrap;     /* Si no caben, bajan a la siguiente línea */
+        justify-content: center; /* Los centra en la pantalla */
+        gap: 15px;
+    }
+
+    /* Hacemos los links más fáciles de tocar con el dedo */
+    .links-list a {
+        background-color: #1a1a1a; /* Un fondo suave para que parezcan botones */
+        padding: 10px 20px;
+        border-radius: 50px;       /* Bordes redondeados */
+        border: 1px solid #333;    /* Borde sutil */
+        font-size: 1rem;
+    }
+
+    .links-grid {
+        grid-template-columns: 1fr;
     }
 }
+
+
