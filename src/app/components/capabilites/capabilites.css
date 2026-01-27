@@ -3,10 +3,25 @@
   max-width: 1000px;
   margin: 0 auto;
   padding: 60px 20px;
-  text-align: center; /* Centramos todo para que quede elegante */
 }
 
+/* --- SEPARACIÓN ENTRE SECCIONES --- */
+.sections-container {
+  display: grid;
+  grid-template-columns: 30% 70%;
+  gap: 40px;
+  align-items: start;
+  margin-bottom: 100px;
+  text-align: left; /* Quitamos el centrado */
+}
+
+
 /* --- TÍTULO (Estilo consistente con tus otras secciones) --- */
+.header-block {
+  position: sticky;
+  top: 100px; /* Opcional: hace que el título se quede mientras haces scroll */
+}
+
 .main-title {
   font-size: 2rem;
   font-weight: 800;
@@ -15,6 +30,14 @@
   margin-bottom: 10px;
   letter-spacing: 1px;
 }
+
+.subtitle {
+  font-size: 1.1rem;
+  color: #9ca3af;
+  margin: 0;
+  max-width: 320px; /* Evita líneas demasiado largas */
+}
+
 
 /* --- SUBTÍTULO --- */
 .subtitle {
@@ -30,11 +53,10 @@
 /* --- CONTENEDOR DE TAGS (Flexbox) --- */
 .tags-container {
   display: flex;
-  flex-wrap: wrap; /* Permite que bajen de línea si no caben */
-  justify-content: center; /* Centrados horizontalmente */
-  gap: 15px; /* Espacio entre etiquetas */
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: flex-start; /* Alineadas a la izquierda */
 }
-
 /* --- EL DISEÑO DE LA "PÍLDORA" (TAG) --- */
 .tag {
   /* Tipografía */
@@ -75,5 +97,20 @@
   
   .main-title {
     font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .sections-container {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .header-block {
+    position: static;
+  }
+
+  .subtitle {
+    max-width: 100%;
   }
 }

@@ -1,18 +1,21 @@
 <section class="skills-section">
   
   @for (section of skillSections; track section.titleType) {
-    <div class="header-block">
-      <h2 class="main-title">{{ section.titleType }}</h2>
-      <p class="subtitle">{{ section.subtitleType }}</p>
-    </div>
-
-    <div class="tags-container">
-      @for (skill of section.skills; track skill) {
-        <div class="tag">
-          {{ skill }}
+    <div class="sections-container">
+        <div class="header-block">
+            <h2 class="main-title">{{ section.titleType }}</h2>
+            <p class="subtitle">{{ section.subtitleType }}</p>
         </div>
-      }
+
+        <div class="tags-container">
+            @for (skill of section.skills; track skill) {
+                <div class="tag">
+                {{ skill }}
+                </div>
+            }
+        </div>
     </div>
+    
   }
 
 </section>
