@@ -19,7 +19,7 @@ export class Experience {
 
   experiences: ExperienceDto[] = [
     {
-      period: '2025 - Actualidad',
+      period: '2025 - Act',
       role: 'Desarrollador FullStack',
       company: 'Viewnext',
       tasks: [

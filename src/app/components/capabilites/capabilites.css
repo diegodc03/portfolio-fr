@@ -1,8 +1,7 @@
 /* --- CONTENEDOR PRINCIPAL --- */
 .skills-section {
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 60px 20px;
+    margin: 0 auto;
+    padding: 60px 13%;
 }
 
 /* --- SEPARACIÓN ENTRE SECCIONES --- */

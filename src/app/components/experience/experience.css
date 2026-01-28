@@ -1,11 +1,10 @@
 /* --- ESTRUCTURA GENERAL (2 COLUMNAS) --- */
 .main-container {
   display: grid;
-  grid-template-columns: 1fr 1fr; /* 50% y 50% */
-  gap: 40px; /* Espacio grande entre las dos columnas */
-  max-width: 1200px; /* Hacemos el ancho total más grande para que quepan las dos */
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
   margin: 0 auto;
-  padding: 20px;
+  padding: 60px 12%;
 }
 
 .section-title {
@@ -32,7 +31,7 @@
   font-weight: bold;
   color: #666;
   font-size: 0.85rem;
-  padding-top: 5px;
+  padding-top: 22px;
 }
 
 .timeline-content {
@@ -46,8 +45,8 @@
 .timeline-content::before {
   content: '';
   position: absolute;
-  left: -6px; 
-  top: 6px; 
+  left: -7px;
+    top: 25px;
   width: 10px;
   height: 10px;
   border-radius: 50%;
