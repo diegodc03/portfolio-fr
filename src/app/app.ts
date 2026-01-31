@@ -8,10 +8,11 @@ import { Experience } from "./components/experience/experience";
 import { AcademicFormation } from "./components/academic-formation/academic-formation";
 import { Achievements } from "./components/achievements/achievements";
 import { Capabilites } from "./components/capabilites/capabilites";
+import { AboutMe } from "./components/about-me/about-me";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Navbar, TitleHeader, Contact, Footer, Experience, AcademicFormation, Achievements, Capabilites],
+  imports: [RouterOutlet, Navbar, TitleHeader, Contact, Footer, Experience, AcademicFormation, Achievements, Capabilites, AboutMe],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

@@ -1,21 +1,10 @@
 /* --- CONTENEDOR PRINCIPAL --- */
 .education-section {
-    max-width: 900px;
     padding: 60px 12%;
-    color: #e5e7eb;
+
 }
 
-/* --- TÍTULO (Estilo limpio y moderno) --- */
-.main-title {
-  font-size: 1.8rem;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  color: #fff; /* Blanco puro */
-  margin-bottom: 40px; /* Separación con la línea de tiempo */
-  border-bottom: 1px solid #4b5563; /* Una línea sutil debajo del título */
-  padding-bottom: 10px;
-}
+
 
 /* --- ESTRUCTURA DE LA LÍNEA DE TIEMPO --- */
 .timeline-item {
