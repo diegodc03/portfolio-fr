@@ -3,39 +3,57 @@
   <div class="grid-container">
     
     <div class="title-section-black grid-section-title">Otros Logros & Formación</div>
-    
-    <div class="card awards-card">
-      <h3>🏆 Premios y Reconocimientos</h3>
-      <div class="award-item" *ngFor="let award of awards">
-        <div class="award-icon">{{ award.icon }}</div>
-        <div class="award-info">
-          <span class="award-title">{{ award.title }}</span>
-          <span class="award-org">{{ award.organizer }}</span>
+
+    <div class="card-container">
+      <div class="folder-tab">
+        <div class="folder-content">
+          🏆 Premios y Reconocimientos
         </div>
       </div>
-    </div>
+      <div class="folder-body">
+        @for (award of awards; track $index) {
+          <div class="award-icon">{{ award.icon }}</div>
+          <div class="award-info">
+            <span class="award-title">{{ award.title }}</span>
+            <span class="award-org">{{ award.organizer }}</span>
+          </div>
+        }
+      </div>
+    </div>  
 
-    <div class="card lang-card">
-      <h3>🌍 Idiomas</h3>
-      <div class="lang-item" *ngFor="let lang of languages">
-        <div class="lang-header">
+    <div class="card-container">
+      <div class="folder-tab">
+        <div class="folder-content">
+        🌍 Idiomas
+        </div>
+      </div>
+      <div class="folder-body">
+        @for (lang of languages; track $index) {
+          <div class="lang-header">
           <span>{{ lang.name }}</span>
           <span class="lang-level">{{ lang.level }}</span>
         </div>
         <div class="progress-bar-bg">
           <div class="progress-bar-fill" [style.width.%]="lang.percentage"></div>
         </div>
+        }
       </div>
     </div>
 
-    <div class="card courses-card">
-      <h3>📚 Cursos Externos</h3>
-      <ul class="course-list">
+    <div class="card-container">
+      <div class="folder-tab">
+        <div class="folder-content">
+        🎓 Cursos y Certificaciones
+        </div>
+      </div>
+      <div class="folder-body">
         <li *ngFor="let course of courses">
-          <span class="course-name">{{ course.name }}</span>
-          <span class="course-meta">({{ course.hours }}) - {{ course.platform }}</span>
+          @for (course of courses; track $index) {
+            <span class="course-name">{{ course.name }}</span>
+            <span class="course-meta">({{ course.hours }}) - {{ course.platform }}</span>
+          }
         </li>
-      </ul>
+      </div>
     </div>
 
   </div>

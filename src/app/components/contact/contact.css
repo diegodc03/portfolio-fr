@@ -24,7 +24,7 @@
 /* --- DIV 2: LA TARJETA DE CONTACTO (Estilo Dark Card) --- */
 .contact-card {
     margin-right: 30px;
-    background-color: #1a1a1a; /* Un gris muy oscuro, diferente al fondo negro */
+    background-color: #a5a5a5; /* Un gris muy oscuro, diferente al fondo negro */
     padding: 40px;
     border-radius: 30px;       /* Bordes muy redondeados como en la foto */
     display: flex;

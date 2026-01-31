@@ -62,3 +62,77 @@ html, body {
   justify-content: center;
   padding: 60px 12%;
 }
+
+
+/** CARD MODELO **/
+
+
+:root {
+  --glass-bg: rgba(45, 45, 45, 0.6); /* Color oscuro translúcido */
+  --border-glass: 1px solid rgba(255, 255, 255, 0.1);
+  --radius: 30px;
+}
+
+.card-container {
+  position: relative;
+  width: 350px;
+  margin-top: 60px; /* Espacio para que la pestaña sobresalga */
+}
+
+/* 1. La Pestaña (Rectángulo de arriba) */
+.folder-tab {
+  position: absolute;
+  top: -59px; /* Altura de la pestaña */
+  left: 0;
+  width: 160px; /* Ancho de la pestaña */
+  height: 40px; /* +1px para solapar con la base y que no se vea una línea */
+  background: rgb(59, 59, 59);
+  backdrop-filter: blur(16px);
+  border-radius: 30px 30px 0 0;
+  padding: 10px 20px;
+  z-index: 2;
+
+
+}
+
+.folder-content {
+  width: 100%;
+  height: 100%;
+  background-color: rgb(190, 198, 205);
+  border-radius: 30px;
+  text-align: center;
+  font-weight: bold;
+  line-height: 20px;
+  color: rgb(26, 25, 25);
+  /* Centrar verticalmente */
+  display: flex;  justify-content: center;
+  align-items: center;
+}
+
+/* 2. El Cuerpo (Cuadrado de abajo) */
+.folder-body {
+  position: relative;
+  width: 100%;
+  min-height: 300px;
+  background: rgb(59, 59, 59);
+  backdrop-filter: blur(16px);
+  /* Redondeamos todo menos la esquina superior izquierda donde toca la pestaña */
+  border-radius: 0 30px 30px 30px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 30px;
+  z-index: 1;
+}
+
+/* 3. La Curva de Unión (El secreto del diseño) */
+.folder-tab::after {
+  content: "";
+  position: absolute;
+  right: -30px; /* Ancho de la curva */
+  bottom: 0;
+  width: 30px;
+  height: 30px;
+  /* El truco: un círculo transparente que "muerde" un fondo sólido */
+    background: radial-gradient(circle at top right, transparent 70%, rgb(59, 59, 59) 70.5%);
+    /* Opcional: añade un pequeño borde a la curva */
+    mask-image: radial-gradient(circle at top right, transparent 70%, black 71%);
+}
