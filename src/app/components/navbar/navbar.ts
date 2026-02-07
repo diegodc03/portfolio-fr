@@ -1,4 +1,4 @@
-import { Component, HostListener, signal } from '@angular/core';
+import { Component, ElementRef, HostListener, signal } from '@angular/core';
 
 @Component({
   selector: 'app-navbar',
@@ -7,40 +7,29 @@ import { Component, HostListener, signal } from '@angular/core';
   styleUrl: './navbar.css',
 })
 export class Navbar {
-
-  esOculto = signal(false);
-  ultimoScroll = signal(0);
-
-  opacidadMenu = signal(1);
-
+  ultimoScroll = 0;
+  menuVisible = signal(true);
   menuAbierto = signal(false);
 
-  @HostListener('window:scroll', [])
-  onWindowScroll() {
-    const scrollActual = window.pageYOffset || document.documentElement.scrollTop;
+  constructor(private eRef: ElementRef) {}
 
-    const limiteDesaparicion = 300; // A los 300px ya no se verá nada
-
-    this.opacidadMenu.set(Math.max(0, 1 - (scrollActual / limiteDesaparicion)));
-  }
-
-  // FUNCIÓN PARA EL SCROLL SUAVE
-  irASeccion(id: string) {
-    const elemento = document.getElementById(id);
-
-    if (elemento) {
-      elemento.scrollIntoView({ 
-        behavior: 'smooth', // ESTO HACE LA MAGIA (SUAVE)
-        block: 'start' 
-      });
-    }
-
-    if (window.innerWidth < 768) {
+  // Detectar clics en todo el documento
+  @HostListener('document:click', ['$event'])
+  clickFuera(event: Event) {
+    // Si el menú está abierto y el clic NO fue dentro del componente (nav)
+    if (this.menuAbierto() && !this.eRef.nativeElement.contains(event.target)) {
       this.menuAbierto.set(false);
     }
   }
 
-  // Función extra para el botón de la hamburguesa (Abrir/Cerrar)
+  irASeccion(id: string) {
+    const elemento = document.getElementById(id);
+    if (elemento) {
+      elemento.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+    this.menuAbierto.set(false);
+  }
+
   toggleMenu() {
     this.menuAbierto.set(!this.menuAbierto());
   }

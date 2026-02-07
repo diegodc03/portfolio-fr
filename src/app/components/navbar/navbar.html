@@ -1,15 +1,14 @@
-<div>
-    <nav class="navbar" [style.opacity]="opacidadMenu()" [style.pointer-events]="opacidadMenu() > 0 ? 'auto' : 'none'">
-        
-        <div class="hamburger" (click)="toggleMenu()">
-            <span>☰</span> </div>
+<nav class="navbar" [class.nav-hidden]="!menuVisible()">
+    <div class="hamburger" (click)="toggleMenu()">
+        <span>☰</span>
+    </div>
 
-        <ul class="nav-links" [class.active]="menuAbierto()">
-            <li><a (click)="irASeccion('inicio')">Inicio</a></li>
-            <li><a (click)="irASeccion('sobre-mi')">Sobre mí</a></li>
-            <li><a (click)="irASeccion('contacto')">Contacto</a></li>
-            
-        </ul>
-
-    </nav>
-</div>
+    <ul class="nav-links" [class.active]="menuAbierto()">
+        <li><a (click)="irASeccion('inicio')">Inicio</a></li>
+        <li><a (click)="irASeccion('sobre-mi')">Sobre mí</a></li>
+        <li><a (click)="irASeccion('contacto')">Contacto</a></li>
+        <li><a (click)="irASeccion('inicio')">Inicio</a></li>
+        <li><a (click)="irASeccion('sobre-mi')">Sobre mí</a></li>
+        <li><a (click)="irASeccion('contacto')">Contacto</a></li>
+    </ul>
+</nav>

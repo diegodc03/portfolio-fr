@@ -1,4 +1,4 @@
-<section class="section-general section-background-light">
+<section class="section-general">
   
   <div class="grid-container">
     
@@ -6,20 +6,24 @@
 
     <div class="card-container">
       <div class="folder-tab">
-        <div class="folder-content">
-          🏆 Premios y Reconocimientos
-        </div>
+        <div class="folder-content">🏆 Premios y Reconocimientos</div>
       </div>
       <div class="folder-body">
         @for (award of awards; track $index) {
-          <div class="award-icon">{{ award.icon }}</div>
-          <div class="award-info">
-            <span class="award-title">{{ award.title }}</span>
-            <span class="award-org">{{ award.organizer }}</span>
+          <div class="card award-margin">
+            <div class="img icon-flex">
+              {{ award.icon }}
+            </div>
+            <div class="textBox">
+              <div class="textContent">
+                <p class="h1">{{ award.title }}</p>
+              </div>
+              <p class="p">{{ award.organizer }}</p>
+            </div>
           </div>
         }
       </div>
-    </div>  
+    </div>
 
     <div class="card-container">
       <div class="folder-tab">
@@ -29,30 +33,35 @@
       </div>
       <div class="folder-body">
         @for (lang of languages; track $index) {
-          <div class="lang-header">
-          <span>{{ lang.name }}</span>
-          <span class="lang-level">{{ lang.level }}</span>
-        </div>
-        <div class="progress-bar-bg">
-          <div class="progress-bar-fill" [style.width.%]="lang.percentage"></div>
-        </div>
+          <div class="lang-item"> <div class="lang-header">
+              <span>{{ lang.name }}</span>
+              <span class="lang-level">{{ lang.level }}</span>
+            </div>
+            
+            <div class="loaderBar">
+              <div class="loaderFill" [style.width.%]="lang.percentage"></div>
+            </div>
+          </div>
         }
       </div>
     </div>
-
     <div class="card-container">
       <div class="folder-tab">
-        <div class="folder-content">
-        🎓 Cursos y Certificaciones
-        </div>
+        <div class="folder-content">🎓 Cursos y Certificaciones</div>
       </div>
       <div class="folder-body">
-        <li *ngFor="let course of courses">
-          @for (course of courses; track $index) {
-            <span class="course-name">{{ course.name }}</span>
-            <span class="course-meta">({{ course.hours }}) - {{ course.platform }}</span>
-          }
-        </li>
+        @for (course of courses; track $index) {
+          <div class="card award-margin">
+            <div class="img icon-flex">📚</div>
+            <div class="textBox">
+              <div class="textContent">
+                <p class="h1">{{ course.name }}</p>
+                <span class="span">{{ course.hours }}</span>
+              </div>
+              <p class="p">{{ course.platform }}</p>
+            </div>
+          </div>
+        }
       </div>
     </div>
 

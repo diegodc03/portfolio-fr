@@ -5,14 +5,13 @@ import { TitleHeader } from "./components/title-header/title-header";
 import { Contact } from "./components/contact/contact";
 import { Footer } from "./components/footer/footer";
 import { Experience } from "./components/experience/experience";
-import { AcademicFormation } from "./components/academic-formation/academic-formation";
 import { Achievements } from "./components/achievements/achievements";
 import { Capabilites } from "./components/capabilites/capabilites";
 import { AboutMe } from "./components/about-me/about-me";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Navbar, TitleHeader, Contact, Footer, Experience, AcademicFormation, Achievements, Capabilites, AboutMe],
+  imports: [RouterOutlet, Navbar, TitleHeader, Contact, Footer, Experience, Achievements, Capabilites, AboutMe],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

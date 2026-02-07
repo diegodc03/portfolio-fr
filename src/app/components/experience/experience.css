@@ -20,6 +20,7 @@
 /* Ajustamos el item para que funcione en columnas más estrechas */
 .timeline-item {
   display: grid;
+  color: #e5e7eb;
   /* Reducimos un poco el ancho de la fecha para que no coma espacio */
   grid-template-columns: 90px 1fr; 
   gap: 15px;
@@ -29,7 +30,6 @@
 .timeline-date {
   text-align: right;
   font-weight: bold;
-  color: #666;
   font-size: 0.85rem;
   padding-top: 22px;
 }
@@ -37,7 +37,6 @@
 .timeline-content {
   padding-left: 25px; 
   padding-bottom: 40px; 
-  border-left: 2px solid #ddd; 
   position: relative;
 }
 
@@ -50,8 +49,6 @@
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background-color: #fff; 
-  border: 2px solid #333; 
   z-index: 1;
 }
 

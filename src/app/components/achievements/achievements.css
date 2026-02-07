@@ -14,64 +14,12 @@
   margin-bottom: 20px;
 }
 
-/* --- ESTILO DE LAS TARJETAS --- */
-.card {
-  background-color: #1f2937; /* Fondo oscuro tarjeta (ajusta a tu gusto) */
-  border: 1px solid #374151; /* Borde sutil */
-  border-radius: 12px;
-  padding: 25px;
-  transition: transform 0.2s, box-shadow 0.2s;
-  align-items: center;
-}
 
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
-  border-color: #2563eb; /* Tu azul al pasar el ratón */
-}
-
-.card h3 {
-  margin-top: 0;
-  color: #2563eb; /* Título en azul */
-  font-size: 1.2rem;
-  margin-bottom: 20px;
-  border-bottom: 1px solid #374151;
-  padding-bottom: 10px;
-}
-
-/* --- ESTILOS ESPECÍFICOS: PREMIOS --- */
-.award-item {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  margin-bottom: 15px;
-}
-
-.award-icon {
-  font-size: 1.5rem;
-  background: rgba(37, 99, 235, 0.1); /* Azul transparente */
-  padding: 10px;
-  border-radius: 50%;
-}
-
-.award-info {
-  display: flex;
-  flex-direction: column;
-}
-
-.award-title {
-  font-weight: bold;
-  color: #fff;
-}
-
-.award-org {
-  font-size: 0.85rem;
-  color: #9ca3af;
-}
 
 /* --- ESTILOS ESPECÍFICOS: IDIOMAS --- */
 .lang-item {
   margin-bottom: 20px;
+  color: #e5e7eb;
 }
 
 .lang-header {
@@ -85,19 +33,41 @@
   color: #2563eb;
 }
 
-.progress-bar-bg {
-  width: 100%;
-  height: 8px;
-  background-color: #374151; /* Gris oscuro fondo barra */
-  border-radius: 4px;
-  overflow: hidden;
+.loaderBar::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  border-radius: 5px;
+  background: repeating-linear-gradient(45deg, #0031F2 0 30px, #006DFE 0 40px) right/200% 100%;
+  animation: fillProgress 6s ease-in-out infinite, lightEffect 1s infinite linear;
+  animation-fill-mode: forwards;
 }
 
-.progress-bar-fill {
-  height: 100%;
-  background-color: #2563eb; /* Azul relleno */
-  border-radius: 4px;
+.loaderBar {
+  width: 100%; /* Que ocupe todo el ancho disponible en la card */
+  height: 12px;
+  background: rgba(255, 255, 255, 0.1); /* Fondo sutil para el estilo glass */
+  border-radius: 10px;
+  border: 1px solid rgba(0, 109, 254, 0.5);
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 15px;
 }
+
+.loaderFill {
+  height: 100%;
+  border-radius: 5px;
+  background: repeating-linear-gradient(45deg, #0031F2 0 15px, #006DFE 15px 30px);
+  background-size: 200% 100%;
+  
+  /* Animación de entrada (solo una vez) y efecto de luz (infinito) */
+  animation: 
+    fillEffect 2s ease-out forwards, 
+    lightEffect 2s infinite linear;
+}
+
 
 /* --- ESTILOS ESPECÍFICOS: CURSOS --- */
 .course-list {
@@ -122,3 +92,87 @@
   font-size: 0.85rem;
   color: #9ca3af;
 }
+
+
+
+/* Para separar las tarjetas dentro del cuerpo de la carpeta */
+.award-margin {
+  margin-bottom: 12px;
+  width: 100% !important; /* Para que ocupen todo el ancho de la carpeta */
+  max-width: none !important; /* Eliminamos el límite de 290px */
+}
+
+/* Para centrar los emojis/iconos dentro del cuadro de color */
+.icon-flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  flex-shrink: 0; /* Evita que el icono se aplaste */
+}
+
+/* Asegúrate de que el contenedor padre no corte las sombras al hacer hover */
+.folder-body {
+  padding: 20px;
+  overflow: visible; 
+}
+
+
+.card {
+  width: 100%;
+  max-width: 290px;
+  height: 70px;
+  background: #353535;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  backdrop-filter: blur(10px);
+  transition: 0.5s ease-in-out;
+}
+
+.card:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+}
+
+.img {
+  width: 50px;
+  height: 50px;
+  margin-left: 10px;
+  border-radius: 10px;
+  background: linear-gradient(#d7cfcf, #9198e5);
+}
+
+.card:hover > .img {
+  transition: 0.5s ease-in-out;
+  background: linear-gradient(#9198e5, #712020);
+}
+
+.textBox {
+  width: calc(100% - 90px);
+  margin-left: 10px;
+  color: white;
+  font-family: 'Poppins' sans-serif;
+}
+
+.textContent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.span {
+  font-size: 10px;
+}
+
+.h1 {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.p {
+  font-size: 12px;
+  font-weight: lighter;
+}
+
