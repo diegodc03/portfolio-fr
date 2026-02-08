@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="es" target-language="en" datatype="plaintext" original="ng2.template">
+    <body>
+      
+      <trans-unit id="5153062332069413197" datatype="html">
+        <source> Sobre Mí </source>
+        <target> About Me </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/about-me/about-me.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+      </trans-unit>
+
+      <trans-unit id="4651678644997887893" datatype="html">
+        <source> Soy un desarrollador FullStack con experiencia en Java, Spring Boot y Angular. Me apasiona crear soluciones tecnológicas eficientes y escalables. </source>
+        <target> I am a FullStack developer with experience in Java, Spring Boot, and Angular. I am passionate about creating efficient and scalable technological solutions. </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/about-me/about-me.html</context>
+          <context context-type="linenumber">11,12</context>
+        </context-group>
+      </trans-unit>
+
+      <trans-unit id="3665867023744198717" datatype="html">
+        <source> Tengo habilidades en trabajo en equipo, resolución de problemas y una constante curiosidad por aprender nuevas tecnologías. </source>
+        <target> I have skills in teamwork, problem-solving, and a constant curiosity for learning new technologies. </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/about-me/about-me.html</context>
+          <context context-type="linenumber">15,16</context>
+        </context-group>
+      </trans-unit>
+
+    </body>
+  </file>
+</xliff>

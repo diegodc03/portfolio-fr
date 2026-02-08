@@ -22,7 +22,9 @@
                     ☀️
                 }
             </button>
-            <button class="icon-btn text-btn" title="Cambiar idioma">ES</button>
+            <button class="icon-btn text-btn" (click)="toggleLanguage()" title="Cambiar idioma">
+                {{ currentLang() }}
+            </button>
         </div>
         
         <div class="hamburger" (click)="toggleMenu()">

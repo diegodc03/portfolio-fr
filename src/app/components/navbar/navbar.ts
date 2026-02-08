@@ -1,5 +1,5 @@
-import { Component, ElementRef, HostListener, signal } from '@angular/core';
-
+import { Component, ElementRef, HostListener, inject, Inject, signal } from '@angular/core';
+import { DOCUMENT } from '@angular/common';
 @Component({
   selector: 'app-navbar',
   imports: [],
@@ -11,8 +11,11 @@ export class Navbar {
   menuVisible = signal(true);
   darkIconBool = signal(true);
   menuAbierto = signal(false);
+  currentLang = signal('ES');
 
-  constructor(private eRef: ElementRef) {}
+  constructor(@Inject(ElementRef) private eRef: ElementRef, @Inject(DOCUMENT) private document: Document) {
+    this.detectLanguage();
+  }
 
   // Detectar clics en todo el documento
   @HostListener('document:click', ['$event'])
@@ -49,4 +52,35 @@ export class Navbar {
       body.classList.add('dark-theme');
     }
   }
+
+  detectLanguage() {
+    // Si la URL contiene "/en/", estamos en inglés
+    if (this.document.location.href.includes('/en/')) {
+      this.currentLang.set('EN');
+    } else {
+      this.currentLang.set('ES');
+    }
+  }
+
+  toggleLanguage() {
+    const currentUrl = this.document.location.href;
+    const pathName = this.document.location.pathname;
+
+    // LÓGICA DE REDIRECCIÓN
+    if (pathName.startsWith('/en')) {
+      // ESTAMOS EN INGLÉS -> VAMOS A ESPAÑOL
+      // Quitamos el '/en' de la URL.
+      // Ejemplo: localhost:4200/en/experiencia -> localhost:4200/experiencia
+      const newUrl = currentUrl.replace('/en', '');
+      this.document.location.href = newUrl;
+    } else {
+      // ESTAMOS EN ESPAÑOL -> VAMOS A INGLÉS
+      // Añadimos '/en' después del dominio.
+      // Ojo: En local esto fallará con ng serve (te lo explico abajo), pero en producción funcionará.
+      const origin = this.document.location.origin; // http://localhost:4200
+      const newUrl = origin + '/en' + pathName;
+      this.document.location.href = newUrl;
+    }
+  }
+  
 }

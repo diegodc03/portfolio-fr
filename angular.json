@@ -15,7 +15,8 @@
           "options": {
             "browser": "src/main.ts",
             "polyfills": [
-              "zone.js"
+              "zone.js",
+              "@angular/localize/init"
             ],
             "tsConfig": "tsconfig.app.json",
             "assets": [
@@ -48,6 +49,13 @@
               "optimization": false,
               "extractLicenses": false,
               "sourceMap": true
+            },
+            "en": {
+              "localize": ["en"],
+              "baseHref": "/en/"
+            },
+            "es": {
+              "localize": ["es"]
             }
           },
           "defaultConfiguration": "production"
@@ -60,6 +68,12 @@
             },
             "development": {
               "buildTarget": "cvfr:build:development"
+            },
+            "en": {
+              "buildTarget": "cvfr:build:development,en"
+            },
+            "es": {
+              "buildTarget": "cvfr:build:development,es"
             }
           },
           "defaultConfiguration": "development"
@@ -72,7 +86,8 @@
           "options": {
             "polyfills": [
               "zone.js",
-              "zone.js/testing"
+              "zone.js/testing",
+              "@angular/localize/init"
             ],
             "tsConfig": "tsconfig.spec.json",
             "assets": [
@@ -86,6 +101,13 @@
             ]
           }
         }
+      },
+        "i18n": {
+          "sourceLocale": "es",
+          "locales": {
+            "en": "src/locale/messages.en.xlf"
+          }
+
       }
     }
   },
