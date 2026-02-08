@@ -4,12 +4,12 @@
   grid-template-columns: 1fr 1fr;
   gap: 40px;
   margin: 0 auto;
-  padding: 60px 12%;
+  padding: 100px 12%;
 }
 
 .section-title {
-  color: #2563eb; /* Tu color azul */
-  border-bottom: 2px solid #e5e7eb;
+  color: var(--accent-blue); /* Tu color azul */
+  border-bottom: 2px solid var(--border-light);
   padding-bottom: 10px;
   margin-bottom: 30px;
   font-size: 1.5rem;
@@ -20,7 +20,7 @@
 /* Ajustamos el item para que funcione en columnas más estrechas */
 .timeline-item {
   display: grid;
-  color: #e5e7eb;
+  color: var(--text-primary);
   /* Reducimos un poco el ancho de la fecha para que no coma espacio */
   grid-template-columns: 90px 1fr; 
   gap: 15px;
@@ -57,7 +57,7 @@
   border-left-color: transparent; 
 }
 .timeline-item:last-child .timeline-content::before {
-  border-color: #333; 
+  border-color: var(--border-subtle); 
 }
 
 /* --- RESPONSIVE (MÓVIL) --- */
@@ -85,6 +85,6 @@
     margin-left: 25px;
   }
   .timeline-content {
-     border-left: 2px solid #ddd;
+      border-left: 2px solid var(--border-light);
   }
 }

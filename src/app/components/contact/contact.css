@@ -23,8 +23,7 @@
 
 /* --- DIV 2: LA TARJETA DE CONTACTO (Estilo Dark Card) --- */
 .contact-card {
-    margin-right: 30px;
-    background-color: #a5a5a5; /* Un gris muy oscuro, diferente al fondo negro */
+    background-color: var(--bg-tertiary); /* Un gris muy oscuro, diferente al fondo negro */
     padding: 40px;
     border-radius: 30px;       /* Bordes muy redondeados como en la foto */
     display: flex;
@@ -42,26 +41,26 @@
 .contact-card p {
     font-size: 1.1rem;
     line-height: 1.6;
-    color: #ccc; /* Texto grisáceo para leer mejor */
+    color: var(--text-muted); /* Texto grisáceo para leer mejor */
     margin-bottom: 30px;
     max-width: 90%;
 }
 
 .email-link {
-    color: #fff;
+    color: var(--text-primary);
     font-size: 1.2rem;
     text-decoration: none;
     font-weight: bold;
     margin-bottom: auto; /* Empuja el estado hacia abajo */
     display: inline-block;
-    border-bottom: 1px solid #555;
+    border-bottom: 1px solid var(--border-strong);
     padding-bottom: 2px;
     transition: color 0.3s;
 }
 
 .email-link:hover {
-    color: #ccc;
-    border-color: #fff;
+    color: var(--text-muted);
+    border-color: var(--text-primary);
 }
 
 /* El punto verde de estado */
@@ -71,15 +70,15 @@
     gap: 10px;
     margin-top: 40px;
     font-size: 0.9rem;
-    color: #bbb;
+    color: var(--text-secondary);
 }
 
 .dot {
     width: 10px;
     height: 10px;
-    background-color: #2ecc71; /* Verde brillante */
+    background-color: var(--accent-green); /* Verde brillante */
     border-radius: 50%;
-    box-shadow: 0 0 8px rgba(46, 204, 113, 0.6); /* Pequeño brillo */
+    box-shadow: 0 0 8px color-mix(in srgb, var(--accent-green) 60%, transparent); /* Pequeño brillo */
 }
 
 /* --- DIV 3: ENLACES LATERALES --- */
@@ -92,7 +91,7 @@
 .social-links h4 {
     font-size: 1.2rem;
     margin-bottom: 30px;
-    color: #888; /* Título sutil */
+    color: var(--text-soft); /* Título sutil */
     text-transform: uppercase;
     letter-spacing: 1px;
 }
@@ -110,9 +109,9 @@
     justify-content: space-between;
     padding: 14px 16px;
     border-radius: 14px;
-    border: 1px solid #333;
-    background-color: #111;
-    color: #fff;
+    border: 1px solid var(--border-subtle);
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
     text-decoration: none;
     font-weight: 600;
     transition: transform 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
@@ -120,24 +119,24 @@
 
 .contact-link-card:hover {
     transform: translateY(-2px);
-    border-color: #555;
-    background-color: #181818;
+    border-color: var(--border-strong);
+    background-color: var(--bg-secondary);
 }
 
 .contact-linkedin {
-    color: #0e76a8;
+    color: color-mix(in srgb, var(--accent-blue) 60%, var(--brand-linkedin) 40%);
 }
 
 .contact-github {
-    color: #f5f5f5;
+    color: var(--text-primary);
 }
 
 .contact-email {
-    color: #9cd67b;
+    color: color-mix(in srgb, var(--accent-green) 60%, var(--brand-email) 40%);
 }
 
 .contact-calendar {
-    color: #ffb347;
+    color: var(--accent-orange);
 }
 
 .links-list {
@@ -150,7 +149,7 @@
 }
 
 .links-list a {
-    color: #fff;
+    color: var(--text-primary);
     text-decoration: none;
     font-size: 1.2rem;
     display: flex;
@@ -166,10 +165,10 @@
 .icon {
     font-size: 0.8rem;
     font-weight: bold;
-    border: 1px solid #444;
+    border: 1px solid var(--border-muted);
     padding: 5px 8px;
     border-radius: 6px;
-    color: #888;
+    color: var(--text-soft);
 }
 /* --- RESPONSIVE (Móvil y Tablet) --- */
 @media (max-width: 768px) {
@@ -183,11 +182,6 @@
     .title-section {
         text-align: center;
         font-size: 2.5rem;
-    }
-
-    /* DIV 2 (La Tarjeta): Ajustes para pantalla estrecha */
-    .div2 {
-        width: 100%; /* Aseguramos que ocupe todo el ancho */
     }
 
     .contact-card {
@@ -224,10 +218,10 @@
 
     /* Hacemos los links más fáciles de tocar con el dedo */
     .links-list a {
-        background-color: #1a1a1a; /* Un fondo suave para que parezcan botones */
+        background-color: var(--bg-secondary); /* Un fondo suave para que parezcan botones */
         padding: 10px 20px;
         border-radius: 50px;       /* Bordes redondeados */
-        border: 1px solid #333;    /* Borde sutil */
+        border: 1px solid var(--border-subtle);    /* Borde sutil */
         font-size: 1rem;
     }
 

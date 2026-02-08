@@ -1,14 +1,33 @@
 <nav class="navbar" [class.nav-hidden]="!menuVisible()">
-    <div class="hamburger" (click)="toggleMenu()">
-        <span>☰</span>
+    
+    <div class="logo">
+        DIEGO
     </div>
 
     <ul class="nav-links" [class.active]="menuAbierto()">
         <li><a (click)="irASeccion('inicio')">Inicio</a></li>
         <li><a (click)="irASeccion('sobre-mi')">Sobre mí</a></li>
-        <li><a (click)="irASeccion('contacto')">Contacto</a></li>
-        <li><a (click)="irASeccion('inicio')">Inicio</a></li>
-        <li><a (click)="irASeccion('sobre-mi')">Sobre mí</a></li>
+        <li><a (click)="irASeccion('capabilites')">Capacidades</a></li>
+        <li><a (click)="irASeccion('logros')">Logros</a></li>
+        <li><a (click)="irASeccion('experiencia')">Experiencia</a></li>
         <li><a (click)="irASeccion('contacto')">Contacto</a></li>
     </ul>
+
+    <div class="nav-actions">
+        <div class="settings">
+            <button class="icon-btn" title="Cambiar tema" (click)="toggleTheme()">
+                @if (darkIconBool()) {
+                    🌙
+                } @else {
+                    ☀️
+                }
+            </button>
+            <button class="icon-btn text-btn" title="Cambiar idioma">ES</button>
+        </div>
+        
+        <div class="hamburger" (click)="toggleMenu()">
+            <span>☰</span>
+        </div>
+    </div>
+    
 </nav>

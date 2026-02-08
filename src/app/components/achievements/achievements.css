@@ -1,25 +1,20 @@
-
-
 /* --- GRID LAYOUT --- */
 .grid-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-  gap: 20px;
+  gap: 30px;
   width: 100%;
 }
-
 
 .grid-section-title {
   grid-column: 1 / -1; /* Hace que el título ocupe toda la fila */
   margin-bottom: 20px;
 }
 
-
-
 /* --- ESTILOS ESPECÍFICOS: IDIOMAS --- */
 .lang-item {
   margin-bottom: 20px;
-  color: #e5e7eb;
+  color: var(--text-primary);
 }
 
 .lang-header {
@@ -30,7 +25,7 @@
 }
 
 .lang-level {
-  color: #2563eb;
+  color: var(--accent-blue);
 }
 
 .loaderBar::before {
@@ -40,7 +35,7 @@
   left: 0;
   height: 100%;
   border-radius: 5px;
-  background: repeating-linear-gradient(45deg, #0031F2 0 30px, #006DFE 0 40px) right/200% 100%;
+  background: repeating-linear-gradient(45deg, var(--accent-blue-strong) 0 30px, var(--accent-blue-light) 0 40px) right/200% 100%;
   animation: fillProgress 6s ease-in-out infinite, lightEffect 1s infinite linear;
   animation-fill-mode: forwards;
 }
@@ -48,9 +43,9 @@
 .loaderBar {
   width: 100%; /* Que ocupe todo el ancho disponible en la card */
   height: 12px;
-  background: rgba(255, 255, 255, 0.1); /* Fondo sutil para el estilo glass */
+  background: color-mix(in srgb, var(--text-primary) 10%, transparent); /* Fondo sutil para el estilo glass */
   border-radius: 10px;
-  border: 1px solid rgba(0, 109, 254, 0.5);
+  border: 1px solid color-mix(in srgb, var(--accent-blue) 50%, transparent);
   position: relative;
   overflow: hidden;
   margin-bottom: 15px;
@@ -59,7 +54,7 @@
 .loaderFill {
   height: 100%;
   border-radius: 5px;
-  background: repeating-linear-gradient(45deg, #0031F2 0 15px, #006DFE 15px 30px);
+  background: repeating-linear-gradient(45deg, var(--accent-blue-strong) 0 15px, var(--accent-blue-light) 15px 30px);
   background-size: 200% 100%;
   
   /* Animación de entrada (solo una vez) y efecto de luz (infinito) */
@@ -67,7 +62,6 @@
     fillEffect 2s ease-out forwards, 
     lightEffect 2s infinite linear;
 }
-
 
 /* --- ESTILOS ESPECÍFICOS: CURSOS --- */
 .course-list {
@@ -78,22 +72,20 @@
 
 .course-list li {
   margin-bottom: 12px;
-  border-left: 2px solid #2563eb; /* Pequeña línea azul a la izquierda */
+  border-left: 2px solid var(--accent-blue); /* Pequeña línea azul a la izquierda */
   padding-left: 10px;
 }
 
 .course-name {
   display: block;
   font-weight: bold;
-  color: #e5e7eb;
+  color: var(--text-primary);
 }
 
 .course-meta {
   font-size: 0.85rem;
-  color: #9ca3af;
+  color: var(--text-secondary);
 }
-
-
 
 /* Para separar las tarjetas dentro del cuerpo de la carpeta */
 .award-margin {
@@ -117,12 +109,11 @@
   overflow: visible; 
 }
 
-
 .card {
   width: 100%;
   max-width: 290px;
   height: 70px;
-  background: #353535;
+  background: var(--bg-secondary);
   border-radius: 20px;
   display: flex;
   align-items: center;
@@ -141,18 +132,18 @@
   height: 50px;
   margin-left: 10px;
   border-radius: 10px;
-  background: linear-gradient(#d7cfcf, #9198e5);
+  background: var(--gradient-purple);
 }
 
 .card:hover > .img {
   transition: 0.5s ease-in-out;
-  background: linear-gradient(#9198e5, #712020);
+  background: var(--gradient-warm);
 }
 
 .textBox {
   width: calc(100% - 90px);
   margin-left: 10px;
-  color: white;
+  color: var(--text-primary);
   font-family: 'Poppins' sans-serif;
 }
 
@@ -175,4 +166,5 @@
   font-size: 12px;
   font-weight: lighter;
 }
+
 

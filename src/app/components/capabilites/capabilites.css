@@ -1,7 +1,7 @@
 /* --- CONTENEDOR PRINCIPAL --- */
 .skills-section {
     margin: 0 auto;
-    padding: 60px 13%;
+    padding: 100px 13%;
 }
 
 /* --- SEPARACIÓN ENTRE SECCIONES --- */
@@ -23,7 +23,7 @@
 
 .subtitle {
   font-size: 1.1rem;
-  color: #9ca3af;
+  color: var(--text-secondary);
   margin: 0;
   max-width: 320px; /* Evita líneas demasiado largas */
 }
@@ -32,7 +32,7 @@
 /* --- SUBTÍTULO --- */
 .subtitle {
   font-size: 1.1rem;
-  color: #9ca3af; /* Gris suave */
+  color: var(--text-secondary); /* Gris suave */
   margin-top: 0;
   margin-bottom: 50px; /* Separación con los tags */
   max-width: 600px;
@@ -50,13 +50,13 @@
 /* --- EL DISEÑO DE LA "PÍLDORA" (TAG) --- */
 .tag {
   /* Tipografía */
-  color: #e5e7eb; /* Blanco roto */
+  color: var(--text-primary); /* Blanco roto */
   font-size: 1rem;
   font-weight: 500;
   
   /* Forma y Bordes (Clave de tu imagen) */
   background-color: transparent; /* Fondo transparente */
-  border: 1px solid #374151; /* Borde gris oscuro y fino */
+  border: 1px solid var(--border-subtle); /* Borde gris oscuro y fino */
   border-radius: 50px; /* Borde muy redondo (Pill shape) */
   padding: 12px 24px; /* Espacio interior amplio */
   
@@ -67,11 +67,11 @@
 
 /* --- EFECTO HOVER (Al pasar el ratón) --- */
 .tag:hover {
-  border-color: #2563eb; /* Tu azul corporativo */
-  background-color: rgba(37, 99, 235, 0.1); /* Fondo azul muy sutil */
+  border-color: var(--accent-blue); /* Tu azul corporativo */
+  background-color: color-mix(in srgb, var(--accent-blue) 10%, transparent); /* Fondo azul muy sutil */
   transform: translateY(-3px); /* Pequeña elevación */
-  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2); /* Sombra suave (Glow) */
-  color: #fff;
+  box-shadow: 0 4px 12px color-mix(in srgb, var(--accent-blue) 20%, transparent); /* Sombra suave (Glow) */
+  color: var(--text-primary);
 }
 
 /* --- RESPONSIVE --- */

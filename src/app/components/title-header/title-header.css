@@ -7,7 +7,7 @@
   /* ESTO ES LA CLAVE: 100vh = 100% del alto de la ventana visible */
   min-height: 100vh; 
   width: 100%;
-  color: #d1cece;
+  color: var(--text-primary);
   /* Flexbox para alinear el contenido dentro de esa pantalla completa */
   display: flex;
   flex-direction: column;

@@ -9,6 +9,7 @@ import { Component, ElementRef, HostListener, signal } from '@angular/core';
 export class Navbar {
   ultimoScroll = 0;
   menuVisible = signal(true);
+  darkIconBool = signal(true);
   menuAbierto = signal(false);
 
   constructor(private eRef: ElementRef) {}
@@ -32,5 +33,20 @@ export class Navbar {
 
   toggleMenu() {
     this.menuAbierto.set(!this.menuAbierto());
+  }
+
+  toggleTheme() {
+    const body = document.body;
+    const isDark = body.classList.contains('dark-theme');
+    this.darkIconBool.set(!isDark);
+
+    if (isDark) {
+      console.log('Cambiando a tema claro');
+      body.classList.remove('dark-theme');
+      body.classList.add('light-theme');
+    } else {
+      body.classList.remove('light-theme');
+      body.classList.add('dark-theme');
+    }
   }
 }

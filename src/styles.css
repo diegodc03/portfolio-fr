@@ -27,12 +27,12 @@ html, body {
 .title-section-black {
   font-family: 'Archivo Black', sans-serif;
   font-size: 1.8rem;
-  color: rgb(26, 25, 25);
+  color: var(--text-dark);
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 1px;
   margin-bottom: 40px; /* Separación con la línea de tiempo */
-  border-bottom: 1px solid #4b5563; /* Una línea sutil debajo del título */
+  border-bottom: 1px solid var(--border-color); /* Una línea sutil debajo del título */
   padding-bottom: 10px;
 }
 
@@ -40,45 +40,134 @@ html, body {
 .title-section-white {
   font-family: 'Archivo Black', sans-serif;
   font-size: 1.8rem;
-  color: rgb(191, 183, 183);
+  color: var(--text-light);
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 1px;
   margin-bottom: 40px; /* Separación con la línea de tiempo */
-  border-bottom: 1px solid #4b5563; /* Una línea sutil debajo del título */
+  border-bottom: 1px solid var(--border-color); /* Una línea sutil debajo del título */
   padding-bottom: 10px;
 }
 
 
 /** BackGround general de secciones **/
 .section-background-dark {
-  background-color: rgb(30, 29, 29);
+  background-color: var(--bg-primary);
 }
 
 .section-background-light {
-  background-color: #9a9898;
+  background-color: var(--bg-tertiary);
 }
 
 .section-general {
   display: flex;
   justify-content: center;
-  padding: 60px 12%;
+  padding: 100px 12%;
 }
 
 
 /** CARD MODELO **/
-
-
 :root {
-  --glass-bg: rgba(45, 45, 45, 0.6); /* Color oscuro translúcido */
-  --border-glass: 1px solid rgba(255, 255, 255, 0.1);
-  --radius: 30px;
-}
+    /* GLASSMORPHISM */
+    --glass-bg: rgba(45, 45, 45, 0.6);
+    --border-glass: 1px solid rgba(255, 255, 255, 0.1);
+    --radius: 30px;
+
+    /* BACKGROUNDS */
+    --bg-primary: #1e1d1d;
+    --bg-secondary: #3b3b3b;
+    --bg-tertiary: #a5a5a5;
+    --bg-card: rgb(59, 59, 59);
+    --bg-navbar: rgba(44, 62, 80, 0.95);
+
+    /* TEXT */
+    --text-primary: #e5e7eb;
+    --text-secondary: #9ca3af;
+    --text-dark: rgb(26, 25, 25);
+    --text-light: rgb(191, 183, 183);
+    --text-muted: #ccc;
+    --text-soft: #888;
+
+    /* ACCENTS */
+    --accent-blue: #2563eb;
+    --accent-blue-strong: #0031F2;
+    --accent-blue-light: #006DFE;
+    --accent-green: #2ecc71;
+    --accent-orange: #ffb347;
+    --accent-red: #712020;
+    --accent-cyan: #3498db;
+    --brand-linkedin: #0e76a8;
+    --brand-email: #9cd67b;
+
+    /* BORDERS & DIVIDERS */
+    --border-color: #4b5563;
+    --border-subtle: #333333;
+    --border-light: #e5e7eb;
+    --border-dark: #222;
+    --border-muted: #444;
+    --border-strong: #555;
+
+    /* GRADIENTS */
+    --gradient-blue: linear-gradient(#0031F2, #006DFE);
+    --gradient-purple: linear-gradient(#d7cfcf, #9198e5);
+    --gradient-warm: linear-gradient(#9198e5, #712020);
+
+    /* Legacy helpers */
+    --gray-400: var(--text-secondary);
+  }
+
+  body.light-theme {
+    /* BACKGROUNDS - Light Mode */
+    --bg-primary: #f4f4f4;
+    --bg-secondary: #ffffff;
+    --bg-tertiary: #e8e8e8;
+    --bg-card: #fafafa;
+    --bg-navbar: rgba(255, 255, 255, 0.95);
+
+    /* TEXT - Light Mode */
+    --text-primary: #333333;
+    --text-secondary: #666666;
+    --text-dark: #1a1a1a;
+    --text-light: #555555;
+    --text-muted: #555555;
+    --text-soft: #777777;
+
+    /* BORDERS - Light Mode */
+    --border-color: #d1d5db;
+    --border-subtle: #e5e7eb;
+    --border-light: #f3f4f6;
+    --border-dark: #d1d5db;
+    --border-muted: #cbd5e1;
+    --border-strong: #9ca3af;
+
+    /* ACCENTS remain the same */
+    --accent-blue: #1d4ed8;
+    --accent-green: #16a34a;
+    --accent-orange: #f97316;
+    --accent-red: #dc2626;
+  }
+
+  body.dark-theme {
+    /* Already your default, but explicit */
+    --bg-primary: #1e1d1d;
+    --bg-secondary: #3b3b3b;
+    --bg-tertiary: #a5a5a5;
+    --bg-card: rgb(59, 59, 59);
+    --bg-navbar: rgba(0, 0, 0, 0.9);
+
+    --text-primary: #e5e7eb;
+    --text-secondary: #9ca3af;
+
+    --border-color: #4b5563;
+    --border-subtle: #333333;
+  }
+
+
 
 .card-container {
   position: relative;
-  width: 350px;
   margin-top: 60px; /* Espacio para que la pestaña sobresalga */
+  width: 90%;
 }
 
 /* 1. La Pestaña (Rectángulo de arriba) */
@@ -88,7 +177,7 @@ html, body {
   left: 0;
   width: 160px; /* Ancho de la pestaña */
   height: 40px; /* +1px para solapar con la base y que no se vea una línea */
-  background: rgb(59, 59, 59);
+  background: var(--bg-card);
   backdrop-filter: blur(16px);
   border-radius: 30px 30px 0 0;
   padding: 10px 20px;
@@ -100,12 +189,12 @@ html, body {
 .folder-content {
   width: 100%;
   height: 100%;
-  background-color: rgb(190, 198, 205);
+  background-color: var(--bg-tertiary);
   border-radius: 30px;
   text-align: center;
   font-weight: bold;
   line-height: 20px;
-  color: rgb(26, 25, 25);
+  color: var(--text-dark);
   /* Centrar verticalmente */
   display: flex;  justify-content: center;
   align-items: center;
@@ -116,11 +205,11 @@ html, body {
   position: relative;
   width: 100%;
   min-height: 300px;
-  background: rgb(59, 59, 59);
+  background: var(--bg-card);
   backdrop-filter: blur(16px);
   /* Redondeamos todo menos la esquina superior izquierda donde toca la pestaña */
   border-radius: 0 30px 30px 30px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid color-mix(in srgb, var(--text-primary) 10%, transparent);
   padding: 30px;
   z-index: 1;
 }
@@ -134,7 +223,10 @@ html, body {
   width: 30px;
   height: 30px;
   /* El truco: un círculo transparente que "muerde" un fondo sólido */
-    background: radial-gradient(circle at top right, transparent 70%, rgb(59, 59, 59) 70.5%);
+    background: radial-gradient(circle at top right, transparent 70%, var(--bg-card) 70.5%);
     /* Opcional: añade un pequeño borde a la curva */
     mask-image: radial-gradient(circle at top right, transparent 70%, black 71%);
 }
+
+
+
