@@ -203,8 +203,8 @@ html, body {
 /* 2. El Cuerpo (Cuadrado de abajo) */
 .folder-body {
   position: relative;
-  width: 100%;
-  min-height: 300px;
+  min-width: 300px;
+  min-height: 220px;
   background: var(--bg-card);
   backdrop-filter: blur(16px);
   /* Redondeamos todo menos la esquina superior izquierda donde toca la pestaña */
