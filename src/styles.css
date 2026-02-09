@@ -6,6 +6,8 @@ html, body {
   width: 100%;
 }
 
+  
+
 /* En el CSS del componente padre (donde está el <main>) */
 .main, .content, .left-side {
   width: 100%;

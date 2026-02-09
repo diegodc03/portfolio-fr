@@ -1,0 +1,17 @@
+<div class="carousel carousel--scroll-buttons carousel--scroll-markers">
+  
+  @for (slide of misFotos; track slide.id) {
+    <div class="carousel__slide" [attr.data-label]="slide.label">
+      
+      <img [src]="slide.image" [alt]="slide.label" loading="lazy" />
+      
+      <div class="content" *ngIf="slide.text">
+        <h3>{{ slide.text }}</h3>
+      </div>
+
+    </div>
+  } @empty {
+    <div class="carousel__slide">No hay imágenes</div>
+  }
+
+</div>
