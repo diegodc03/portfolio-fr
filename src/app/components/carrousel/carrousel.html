@@ -1,17 +1,31 @@
-<div class="carousel carousel--scroll-buttons carousel--scroll-markers">
-  
-  @for (slide of misFotos; track slide.id) {
-    <div class="carousel__slide" [attr.data-label]="slide.label">
-      
-      <img [src]="slide.image" [alt]="slide.label" loading="lazy" />
-      
-      <div class="content" *ngIf="slide.text">
-        <h3>{{ slide.text }}</h3>
-      </div>
+<div class="carousel-container">
 
+  <div *ngFor="let slide of slides; let i = index" 
+       class="slide fade" 
+       [class.active]="i === currentIndex">
+    
+    <img [src]="slide.image" [alt]="slide.title">
+
+    <div class="caption" *ngIf="slide.title">
+      <h3>{{ slide.title }}</h3>
+      <p>{{ slide.text }}</p>
     </div>
-  } @empty {
-    <div class="carousel__slide">No hay imágenes</div>
-  }
+  </div>
+
+  <button mat-mini-fab color="primary" class="nav-btn prev" (click)="prev()">
+    <mat-icon>chevron_left</mat-icon>
+  </button>
+
+  <button mat-mini-fab color="primary" class="nav-btn next" (click)="next()">
+    <mat-icon>chevron_right</mat-icon>
+  </button>
+
+  <div class="dots-container">
+    <span *ngFor="let slide of slides; let i = index" 
+          class="dot" 
+          [class.active]="i === currentIndex"
+          (click)="goToSlide(i)">
+    </span>
+  </div>
 
 </div>

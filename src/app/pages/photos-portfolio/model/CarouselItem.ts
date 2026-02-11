@@ -1,6 +1,6 @@
 export interface Slide {
   id: number;
   image: string;
-  label: string;
+  title: string;
   text?: string;
 }
