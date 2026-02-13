@@ -1,0 +1,121 @@
+* {
+    background-color: #fff;
+}
+
+.main-layout {
+  height: 100vh; /* Ocupa el 100% de la altura de la pantalla */
+  display: flex;
+  flex-direction: column; /* Coloca uno debajo del otro */
+  overflow: hidden; /* Evita que la página entera haga scroll */
+}
+
+.header-section {
+  height: 18vh; 
+  width: 100%;
+  padding: 0 45px; 
+  box-sizing: border-box; 
+  overflow: hidden;
+  /* Flexbox para alinear verticalmente */
+  display: flex; 
+  align-items: center; 
+  
+  /* IMPORTANTE: Necesario para que el absolute funcione respecto a este div */
+  position: relative; 
+  
+  /* Esto empuja los elementos laterales a los extremos */
+  justify-content: space-between;
+}
+
+/* --- CENTRO PERFECTO --- */
+.text-content {
+  /* Se sale del flujo para centrarse en la pantalla, no entre los botones */
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  
+  text-align: center;
+  z-index: 10; /* Asegura que quede por encima si la pantalla es muy pequeña */
+
+  h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    font-weight: 300;
+    letter-spacing: 2px;
+    white-space: nowrap; /* Evita que el nombre se parta en dos líneas */
+  }
+
+  h3 {
+    margin: 10px 0 0 0;
+    font-size: 1.2rem;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+  }
+}
+
+/* --- BOTONES LATERALES --- */
+
+/* Estilos compartidos para contenedor izquierdo y derecho */
+.left-container, .right-container {
+  display: flex;
+  align-items: center;
+  gap: 15px; /* Espacio entre iconos */
+  z-index: 20; /* Para que sean clicables */
+
+  
+}
+
+/* Botón de volver */
+.nav-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: inherit;
+  padding: 0;
+  
+  &:hover { color: #000; }
+}
+
+/* Botones de redes sociales (Iconos) */
+.icon-btn {
+  color: #666; /* Color gris suave inicial */
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+
+  /* Tamaño de los iconos */
+  span.material-symbols-outlined, svg {
+    font-size: 28px; /* Tamaño un poco más grande para tocar fácil */
+    width: 28px;
+    height: 28px;
+  }
+
+  /* Efecto Hover */
+  &:hover {
+    color: #000; /* Se vuelve negro al pasar el ratón */
+    transform: scale(1.1); /* Crece un poquito */
+    background: #b4b3b3;
+  }
+}
+
+.text-accesories-content {
+  font-size: 1.2rem;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+}
+
+
+.grid-section {
+  /* Ocupa todo el espacio restante (el 65%) */
+  flex: 1; 
+  
+  /* El scroll ocurre SOLO aquí dentro */
+  overflow-y: auto; 
+  padding: 20px; /* Un poco de aire alrededor de las fotos */
+}
