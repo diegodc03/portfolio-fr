@@ -1,9 +1,34 @@
-
-
 .footer-app {
     background-color: var(--bg-secondary);
     color: var(--text-primary);
     text-align: center;
     padding: 15px 0;
     font-size: 0.9rem;
+    
+    /* Para alinear verticalmente si usas la Opción 2 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px; /* Espacio entre elementos */
+}
+
+/* Estilo del enlace */
+.portfolio-link {
+    color: var(--text-primary); /* Usa tu color de texto normal */
+    text-decoration: none;      /* Quita el subrayado feo */
+    font-weight: 600;           /* Un poco más gordito para destacar */
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+/* Efecto al pasar el ratón */
+.portfolio-link:hover {
+    color: #666; /* O un color de acento que tengas */
+    text-decoration: underline;
+}
+
+/* Solo si usas la Opción 2 (la barrita separadora) */
+.separator {
+    margin: 0 5px;
+    opacity: 0.5;
 }

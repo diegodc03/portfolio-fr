@@ -4,7 +4,7 @@ import { ImageGrid } from "../../components/image-grid/image-grid";
 
 @Component({
   selector: 'app-photos-portfolio',
-  imports: [Carrousel, ImageGrid],
+  imports: [ImageGrid],
   templateUrl: './photos-portfolio.html',
   styleUrl: './photos-portfolio.css',
 })

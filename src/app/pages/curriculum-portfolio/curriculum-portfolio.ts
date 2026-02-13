@@ -11,7 +11,7 @@ import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-curriculum-portfolio',
-  imports: [RouterOutlet, Footer, Contact, Experience, Achievements, Capabilites, AboutMe, TitleHeader, Navbar],
+  imports: [Footer, Contact, Experience, Achievements, Capabilites, AboutMe, TitleHeader, Navbar],
   templateUrl: './curriculum-portfolio.html',
   styleUrl: './curriculum-portfolio.css',
   standalone: true
