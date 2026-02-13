@@ -8,6 +8,7 @@
 .column {
   flex: 25%;
   max-width: 25%;
+  box-sizing: border-box;
   padding: 0 4px;
 }
 
