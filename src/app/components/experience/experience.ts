@@ -28,7 +28,7 @@ export class Experience {
         'Control de versiones (Git) y automatización CI/CD.',
         'Metodología Kanban para gestión eficiente de flujos.'
       ],
-      techStack: ['Java 21 / 17 / 11', 'Spring Boot 3', 'PostgreSQL', 'Docker', 'Git']
+      techStack: ['Java 21 / 17 / 11','Angular 19', 'Spring Boot 3', 'PostgreSQL', 'Docker', 'Git']
     },
     {
       period: '2025',
@@ -54,25 +54,20 @@ export class Experience {
         'Fotografía de eventos deportivos.',
         'Control de accesos y gestión de público.'
       ],
-      techStack: [] // Vacío o lo quitas si es opcional
-    },
-    {
-      period: '2019',
-      role: 'Voluntario Eventos',
-      company: 'Cruz Roja', // Ejemplo inventado
-      tasks: ['Apoyo logístico en campañas locales.'],
       techStack: []
     }
   ];
 
   education = [
     {
-      period: '2023 - 2024',
-      degree: 'Máster en Desarrollo de Aplicaciones Web',
-      institution: 'Universidad Complutense de Madrid',
+      period: 'Act.',
+      degree: 'General',
+      institution: 'Autodidacta',
       details: [
-        'Enfoque en tecnologías front-end y back-end modernas.',
-        'Proyecto final: Plataforma de comercio electrónico utilizando Angular y Spring Boot.'
+        'Estudiando de forma autodidacta inglés para sacarme el B2/B1',
+        'Estudiando certificaciones de AWS (Cloud Practitioner de momento) para ampliar mis conocimientos en la nube.',
+        'Mejorando mis habilidades en desarrollo de software a través de cursos online y proyectos personales. (Como puede ser el desarrollo de esta misma web)',
+        'Estudiando la certificacion de Scrum Master para mejorar mis habilidades en gestión de proyectos ágiles.'
       ]
     },
     {
@@ -81,7 +76,7 @@ export class Experience {
       institution: 'Universidad de Salamanca',
       details: [
         'Especialización en desarrollo de software y sistemas distribuidos.',
-        'Proyectos destacados: Desarrollo de una aplicación web para gestión de bibliotecas.'
+        'A partir de la universidad, he desarrollado una sólida base en programación, algoritmos y estructuras de datos, así como en gestión de proyectos y trabajo en equipo.',
       ]
     }
   ];
