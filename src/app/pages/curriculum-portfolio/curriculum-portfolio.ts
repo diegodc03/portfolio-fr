@@ -7,7 +7,6 @@ import { Capabilites } from "../../components/capabilites/capabilites";
 import { AboutMe } from "../../components/about-me/about-me";
 import { TitleHeader } from "../../components/title-header/title-header";
 import { Navbar } from "../../components/navbar/navbar";
-import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-curriculum-portfolio',

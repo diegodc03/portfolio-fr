@@ -1,0 +1,19 @@
+
+
+
+<mat-expansion-panel [expanded]="{expansionPanelOpened}">
+  <mat-expansion-panel-header>
+    <mat-panel-title> {{ carrousel().name }} </mat-panel-title>
+    <mat-panel-description> {{ carrousel().description }} </mat-panel-description>
+  </mat-expansion-panel-header>
+
+  <div class="row">
+    @for (columna of columns(); track $index) {
+      <div class="column">
+        @for (foto of columna; track foto.id) {
+          <img [src]="foto.image" [alt]="foto.title">
+        }
+      </div>
+    }
+  </div>
+</mat-expansion-panel>

@@ -1,0 +1,9 @@
+
+
+<mat-accordion multi>
+  @for (item of carrouselsAgrupados(); track item.name; let isFirst = $first) {
+    <app-expansion-panel 
+      [carrousel]="item" 
+      [expansionPanelOpened]="isFirst" />
+  }
+</mat-accordion>

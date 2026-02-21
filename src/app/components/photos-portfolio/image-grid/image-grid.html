@@ -1,0 +1,9 @@
+<div class="row">
+  @for (columna of columns(); track $index) {
+    <div class="column">
+      @for (item of columna; track item.id) {
+        <img [src]="item.image" [alt]="item.title">
+      }
+    </div>
+  }
+</div>

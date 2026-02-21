@@ -1,10 +1,9 @@
-import { Component, Input } from '@angular/core';
-import { Carrousel } from "../../components/carrousel/carrousel";
-import { ImageGrid } from "../../components/image-grid/image-grid";
+import { Component } from '@angular/core';
+import { ExpansionPanelFather } from "../../components/photos-portfolio/expansion-panel-father/expansion-panel-father";
 
 @Component({
   selector: 'app-photos-portfolio',
-  imports: [ImageGrid],
+  imports: [ExpansionPanelFather],
   templateUrl: './photos-portfolio.html',
   styleUrl: './photos-portfolio.css',
 })
