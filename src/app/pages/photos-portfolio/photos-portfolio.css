@@ -136,3 +136,45 @@
     z-index: 1; 
 }
 
+/* By default, hide the mobile social icons */
+.mobile-socials {
+    display: none;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 10px;
+}
+
+/* RESPONSIVE SETTINGS */
+@media (max-width: 768px) {
+    
+    /* 1. Hide the text "Informática", keep only the arrow icon */
+    .nav-text {
+        display: none;
+    }
+
+    /* 2. Hide the right container (the original icons) */
+    .right-container {
+        display: none;
+    }
+    .left-container {
+        display: none;
+    }
+
+    
+
+    /* 3. Show the icons under the Portfolio text */
+    .mobile-socials {
+        display: flex;
+    }
+
+    /* Adjust header height if needed for the extra line of icons */
+    .header-section {
+        height: 22vh; 
+        padding: 0 20px;
+    }
+
+    /* Make h1 smaller so it doesn't overflow */
+    .text-content h1 {
+        font-size: 1.8rem;
+    }
+}

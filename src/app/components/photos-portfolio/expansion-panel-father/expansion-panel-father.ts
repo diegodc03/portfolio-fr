@@ -7,7 +7,6 @@ import { ExpansionPanel } from "../expansion-panel/expansion-panel";
   selector: 'app-expansion-panel-father',
   imports: [MatAccordion, ExpansionPanel],
   templateUrl: './expansion-panel-father.html',
-  styleUrl: './expansion-panel-father.css',
 })
 export class ExpansionPanelFather {
 
