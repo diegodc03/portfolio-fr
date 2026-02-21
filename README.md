@@ -1,59 +1,51 @@
-# Cvfr
+# 🚀 Portfolio Pro - CV Interactivo
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.2.2.
+Este proyecto es una aplicación web moderna diseñada como un Currículum Vitae interactivo y portafolio dinámico. Desarrollado con **Angular 18+**, el enfoque principal ha sido la gestión eficiente de componentes, reactividad mediante **Signals** y una infraestructura escalable en la nube.
 
-## Development server
+🔗 **Link del Proyecto:** [github.com/diegodc03/portfolio-fr](https://github.com/diegodc03/portfolio-fr)
 
-To start a local development server, run:
+---
 
-```bash
-ng serve
-```
+## 🛠️ Tecnologías y Características Técnicas
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+### **Frontend (Angular 18)**
+* **Signals & Reactivity:** Uso intensivo de `computed`, `effect` e `inputs` reactivos para una gestión de estado eficiente.
+* **Standalone Components:** Arquitectura moderna sin módulos para mejorar la mantenibilidad y el tiempo de carga.
+* **Angular Material:** Implementación de componentes UI como `mat-expansion-panel` y `mat-accordion` con personalización de temas mediante SCSS.
+* **Responsive Design:** Galería de fotos dinámica distribuida en 4 columnas con adaptación automática a dispositivos móviles.
 
-## Code scaffolding
+### **Infraestructura y Cloud**
+* **Amazon S3:** Hosting de los archivos estáticos de la aplicación (SPA).
+* **Amazon CloudFront:** Configurado como CDN para asegurar baja latencia y servir el contenido a través de HTTPS de forma global.
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
 
-```bash
-ng generate component component-name
-```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+---
 
-```bash
-ng generate --help
-```
+## 🔄 Integración Continua (CI/CD)
 
-## Building
+El proyecto está diseñado bajo una cultura DevOps, utilizando **GitHub Actions** para automatizar el ciclo de vida del despliegue:
 
-To build the project run:
+1.  **Build:** Validación del código y generación del bundle de producción.
+2.  **Sincronización:** Despliegue automático de los archivos al bucket de **S3** tras cada `push` a la rama principal.
+3.  **Invalidación:** Limpieza automática de la caché de **CloudFront** para asegurar que los usuarios vean siempre la última versión.
 
-```bash
-ng build
-```
+---
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+## 🎯 Roadmap: Próximos Pasos
 
-## Running unit tests
+El proyecto se encuentra en fase de evolución constante con los siguientes objetivos:
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+1.  **Backend & Database:** Implementación de una API REST y base de datos para centralizar la gestión de proyectos, experiencias y archivos multimedia, eliminando la dependencia de datos estáticos (`JSON/Signals`).
+2.  **Servidor Propio:** Migración a una infraestructura bajo control total para mejorar las labores de administración de sistemas (SysAdmin).
+3.  **Optimización de Media:** Mejora en el procesamiento y carga de imágenes de alta resolución mediante servidores propios, optimizando los tiempos de respuesta y la experiencia de usuario.
 
-```bash
-ng test
-```
+---
 
-## Running end-to-end tests
+## 🔧 Instalación Local
 
-For end-to-end (e2e) testing, run:
+Si deseas ejecutar este proyecto en tu entorno local:
 
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+1. **Clonar el repositorio:**
+   ```bash
+   git clone [https://github.com/diegodc03/portfolio-fr.git](https://github.com/diegodc03/portfolio-fr.git)
