@@ -2,7 +2,7 @@
 
 Este proyecto es una aplicación web moderna diseñada como un Currículum Vitae interactivo y portafolio dinámico. Desarrollado con **Angular 18+**, el enfoque principal ha sido la gestión eficiente de componentes, reactividad mediante **Signals** y una infraestructura escalable en la nube.
 
-🔗 **Link del Proyecto:** [github.com/diegodc03/portfolio-fr](https://github.com/diegodc03/portfolio-fr)
+🔗 **Link del Proyecto:** [https://d3tuatun7xow9z.cloudfront.net/](https://d3tuatun7xow9z.cloudfront.net/)
 
 ---
 
