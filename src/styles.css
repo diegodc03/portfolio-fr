@@ -75,12 +75,17 @@ html, body {
     --border-glass: 1px solid rgba(255, 255, 255, 0.1);
     --radius: 30px;
 
-    /* BACKGROUNDS */
     --bg-primary: #1e1d1d;
     --bg-secondary: #3b3b3b;
     --bg-tertiary: #a5a5a5;
     --bg-card: rgb(59, 59, 59);
-    --bg-navbar: rgba(44, 62, 80, 0.95);
+    --bg-navbar: rgba(0, 0, 0, 0.9);
+
+    --text-primary: #e5e7eb;
+    --text-secondary: #9ca3af;
+
+    --border-color: #4b5563;
+    --border-subtle: #333333;
 
     /* TEXT */
     --text-primary: #e5e7eb;
