@@ -1,53 +1,94 @@
-/* --- 2. SECCIÓN SOBRE MÍ --- */
-
+/* ============================================================
+   ABOUT-ME COMPONENT — about-me.css
+   ============================================================ */
 
 .parent {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 9px;
-    width: 100%;
-}
-    
-.title-about-me {
-    grid-column: span 3 / span 3;
+  display: grid;
+  grid-template-columns: 1fr 2fr;   /* photo | text side by side */
+  grid-template-rows: auto auto;
+  gap: 20px 32px;
+  width: 100%;
+  align-items: start;
 }
 
+/* Title spans full width */
+.title-about-me {
+  grid-column: 1 / -1;
+}
+
+/* Photo column */
 .div3 {
-    grid-row-start: 2;
-    display: flex;
-    justify-content: center;
+  grid-column: 1;
+  grid-row: 2;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
 }
 
 .profile-picture {
-    width: 100%;
-    max-width: 100%;
-    aspect-ratio: 1 / 1;
-    object-fit: cover;
-    border-radius: 20px;
-    box-shadow: 10px 10px 0px var(--border-dark);
-    opacity: 0.4;
+  width: 100%;
+  max-width: 280px;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 8px 8px 0px var(--border-dark);
+  opacity: 0.45;
+  transition: opacity 0.3s ease;
 }
 
 .profile-picture:hover {
-    opacity: 0.8;
-    transition: opacity 0.3s;
+  opacity: 0.85;
 }
 
-
+/* Text column */
 .div4 {
-    color: var(--text-dark);
-    grid-column: span 2 / span 2;
-    grid-row-start: 2;
-    padding: 40px;
-    font-size: 18px;
-    font-weight: 600;
+  grid-column: 2;
+  grid-row: 2;
+  color: var(--text-dark);
+  padding: 16px 0;
+  font-size: clamp(1rem, 1.5vw, 1.15rem);
+  font-weight: 500;
+  line-height: 1.7;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
-        
 
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+/* Tablet: stack vertically */
 @media (max-width: 768px) {
-    .parent {
-        display: block;
-    }
-    
+  .parent {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
 
+  .div3 {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  .div4 {
+    grid-column: 1;
+    grid-row: 3;
+    padding: 0;
+    font-size: 1rem;
+  }
+
+  .profile-picture {
+    max-width: 200px;
+  }
+}
+
+/* Small mobile */
+@media (max-width: 480px) {
+  .profile-picture {
+    max-width: 160px;
+  }
+
+  .div4 {
+    font-size: 0.95rem;
+  }
 }

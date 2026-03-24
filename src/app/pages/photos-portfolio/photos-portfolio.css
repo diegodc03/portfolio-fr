@@ -1,178 +1,188 @@
-* {
-    background-color: #fff;
-}
+/* ============================================================
+   PHOTOS-PORTFOLIO PAGE — photos-portfolio.css
+   ============================================================ */
 
+* { background-color: #fff; }
+
+/* --- FULL-SCREEN LAYOUT --- */
 .main-layout {
-  height: 100vh; /* Ocupa el 100% de la altura de la pantalla */
+  height: 100vh;
   display: flex;
-  flex-direction: column; /* Coloca uno debajo del otro */
-  overflow: hidden; /* Evita que la página entera haga scroll */
-}
-
-.header-section {
-    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
-  height: 18vh; 
-  width: 100%;
-  padding: 0 45px; 
-  box-sizing: border-box; 
+  flex-direction: column;
   overflow: hidden;
-  /* Flexbox para alinear verticalmente */
-  display: flex; 
-  align-items: center; 
-  
-  /* IMPORTANTE: Necesario para que el absolute funcione respecto a este div */
-  position: relative; 
-  
-  /* Esto empuja los elementos laterales a los extremos */
-  justify-content: space-between;
 }
 
-/* --- CENTRO PERFECTO --- */
+/* --- HEADER --- */
+.header-section {
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+  height: 16vh;
+  min-height: 80px;          /* prevents collapse on small screens */
+  width: 100%;
+  padding: 0 40px;
+  box-sizing: border-box;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+/* --- CENTRED TEXT --- */
 .text-content {
-  /* Se sale del flujo para centrarse en la pantalla, no entre los botones */
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  
   text-align: center;
-  z-index: 10; /* Asegura que quede por encima si la pantalla es muy pequeña */
-
-  h1 {
-    margin: 0;
-    font-size: 2.5rem;
-    font-weight: 300;
-    letter-spacing: 2px;
-    white-space: nowrap; /* Evita que el nombre se parta en dos líneas */
-  }
-
-  h3 {
-    margin: 10px 0 0 0;
-    font-size: 1.2rem;
-    color: #666;
-    text-transform: uppercase;
-    letter-spacing: 4px;
-  }
+  z-index: 10;
 }
 
-/* --- BOTONES LATERALES --- */
+.text-content h1 {
+  margin: 0;
+  font-size: clamp(1.3rem, 3.5vw, 2.5rem);
+  font-weight: 300;
+  letter-spacing: 2px;
+  white-space: nowrap;
+  color: #111;
+}
 
-/* Estilos compartidos para contenedor izquierdo y derecho */
-.left-container, .right-container {
+.text-content h3 {
+  margin: 6px 0 0;
+  font-size: clamp(0.75rem, 1.5vw, 1.1rem);
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+}
+
+/* --- SIDE BUTTONS --- */
+.left-container,
+.right-container {
   display: flex;
   align-items: center;
-  gap: 15px; /* Espacio entre iconos */
-  z-index: 20; /* Para que sean clicables */
-
-  
+  gap: 12px;
+  z-index: 20;
 }
 
-/* Botón de volver */
 .nav-btn {
   background: transparent;
   border: none;
   cursor: pointer;
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
   font-family: inherit;
   padding: 0;
-  
+  color: #444;
+  transition: color 0.2s;
+
   &:hover { color: #000; }
 }
 
-/* Botones de redes sociales (Iconos) */
 .icon-btn {
-  color: #666; /* Color gris suave inicial */
+  color: #666;
   text-decoration: none;
   display: flex;
   align-items: center;
   justify-content: center;
+  border-radius: 6px;
+  padding: 4px;
   transition: all 0.3s ease;
 
-  /* Tamaño de los iconos */
-  span.material-symbols-outlined, svg {
-    font-size: 28px; /* Tamaño un poco más grande para tocar fácil */
-    width: 28px;
-    height: 28px;
+  span.material-symbols-outlined,
+  svg {
+    font-size: 26px;
+    width: 26px;
+    height: 26px;
   }
 
-  /* Efecto Hover */
   &:hover {
-    color: #000; /* Se vuelve negro al pasar el ratón */
-    transform: scale(1.1); /* Crece un poquito */
-    background: #b4b3b3;
+    color: #000;
+    transform: scale(1.1);
+    background: #e0e0e0;
   }
 }
 
 .text-accesories-content {
-  font-size: 1.2rem;
+  font-size: clamp(0.75rem, 1.5vw, 1.1rem);
   color: #666;
   text-transform: uppercase;
-  letter-spacing: 4px;
+  letter-spacing: 3px;
 }
 
+/* Mobile social row (hidden on desktop) */
+.mobile-socials {
+  display: none;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 8px;
+}
 
+/* --- PHOTO GRID SECTION --- */
 .grid-section {
-  /* Ocupa todo el espacio restante (el 65%) */
-  flex: 1; 
-  
-  /* El scroll ocurre SOLO aquí dentro */
-  overflow-y: auto; 
-  padding: 20px; /* Un poco de aire alrededor de las fotos */
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px;
 }
-
-::-webkit-scrollbar {
-    display: none;
-}
-
 
 .show-shadow {
-    /* inset = sombra interior */
-    /* Eje-X Eje-Y Difuminado Extensión Color */
-    box-shadow: inset 0px 15px 10px -10px rgba(0, 0, 0, 0.4);
-    
-    /* Asegúrate de que esto esté en tu .grid-section para que funcione bien */
-    position: relative;
-    z-index: 1; 
+  box-shadow: inset 0 15px 10px -10px rgba(0, 0, 0, 0.35);
+  position: relative;
+  z-index: 1;
 }
 
-/* By default, hide the mobile social icons */
-.mobile-socials {
-    display: none;
-    justify-content: center;
-    gap: 20px;
-    margin-top: 10px;
-}
-
-/* RESPONSIVE SETTINGS */
+/* ============================================================
+   RESPONSIVE — ≤ 768px
+   ============================================================ */
 @media (max-width: 768px) {
-    
-    /* 1. Hide the text "Informática", keep only the arrow icon */
-    .nav-text {
-        display: none;
-    }
 
-    /* 2. Hide the right container (the original icons) */
-    .right-container {
-        display: none;
-    }
-    .left-container {
-        display: none;
-    }    
+  /* Hide nav text, keep icon */
+  .nav-text { display: none; }
 
-    /* 3. Show the icons under the Portfolio text */
-    .mobile-socials {
-        display: flex;
-    }
+  /* Hide desktop side containers */
+  .left-container,
+  .right-container { display: none; }
 
-    /* Adjust header height if needed for the extra line of icons */
-    .header-section {
-        height: 22vh; 
-        padding: 0 20px;
-    }
+  /* Show mobile social icons below title */
+  .mobile-socials { display: flex; }
 
-    /* Make h1 smaller so it doesn't overflow */
-    .text-content h1 {
-        font-size: 1.8rem;
-    }
+  /* Taller header for the extra row */
+  .header-section {
+    height: 22vh;
+    min-height: 110px;
+    padding: 0 16px;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0;
+  }
+
+  /* Remove absolute positioning so it stacks naturally */
+  .text-content {
+    position: static;
+    transform: none;
+    width: 100%;
+  }
+
+  .text-content h1 {
+    font-size: clamp(1.1rem, 5vw, 1.8rem);
+    white-space: normal;
+  }
+
+  .text-content h3 {
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+  }
+
+  .grid-section {
+    padding: 10px;
+  }
+}
+
+/* ============================================================
+   RESPONSIVE — ≤ 480px
+   ============================================================ */
+@media (max-width: 480px) {
+  .header-section {
+    height: auto;
+    min-height: 120px;
+    padding: 16px 12px;
+  }
 }

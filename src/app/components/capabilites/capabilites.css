@@ -1,96 +1,78 @@
-/* --- CONTENEDOR PRINCIPAL --- */
+/* ============================================================
+   CAPABILITES COMPONENT — capabilites.css
+   ============================================================ */
+
 .skills-section {
-    margin: 0 auto;
-    padding: 100px 13%;
+  padding: 80px 8%;   /* was 100px 13% */
+  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
 }
 
-/* --- SEPARACIÓN ENTRE SECCIONES --- */
+/* Two-column: sticky label | tags */
 .sections-container {
   display: grid;
-  grid-template-columns: 30% 70%;
-  gap: 40px;
+  grid-template-columns: 28% 1fr;
+  gap: 32px;
   align-items: start;
-  margin-bottom: 100px;
-  text-align: left; /* Quitamos el centrado */
+  margin-bottom: 70px;
+  text-align: left;
 }
 
-
-/* --- TÍTULO (Estilo consistente con tus otras secciones) --- */
+/* Sticky heading block */
 .header-block {
   position: sticky;
-  top: 100px; /* Opcional: hace que el título se quede mientras haces scroll */
+  top: 100px;
 }
 
 .subtitle {
-  font-size: 1.1rem;
+  font-size: clamp(0.9rem, 1.3vw, 1.1rem);
   color: var(--text-secondary);
   margin: 0;
-  max-width: 320px; /* Evita líneas demasiado largas */
+  max-width: 320px;
+  line-height: 1.6;
 }
 
-
-/* --- SUBTÍTULO --- */
-.subtitle {
-  font-size: 1.1rem;
-  color: var(--text-secondary); /* Gris suave */
-  margin-top: 0;
-  margin-bottom: 50px; /* Separación con los tags */
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* --- CONTENEDOR DE TAGS (Flexbox) --- */
+/* Tags flex container */
 .tags-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 15px;
-  justify-content: flex-start; /* Alineadas a la izquierda */
+  gap: 12px;
+  justify-content: flex-start;
 }
-/* --- EL DISEÑO DE LA "PÍLDORA" (TAG) --- */
+
+/* Pill tag */
 .tag {
-  /* Tipografía */
-  color: var(--text-primary); /* Blanco roto */
-  font-size: 1rem;
-  font-weight: 500;
-  
-  /* Forma y Bordes (Clave de tu imagen) */
-  background-color: transparent; /* Fondo transparente */
-  border: 1px solid var(--border-subtle); /* Borde gris oscuro y fino */
-  border-radius: 50px; /* Borde muy redondo (Pill shape) */
-  padding: 12px 24px; /* Espacio interior amplio */
-  
-  /* Transiciones */
-  transition: all 0.3s ease;
-  cursor: default; /* O 'pointer' si quieres que parezcan botones */
-}
-
-/* --- EFECTO HOVER (Al pasar el ratón) --- */
-.tag:hover {
-  border-color: var(--accent-blue); /* Tu azul corporativo */
-  background-color: color-mix(in srgb, var(--accent-blue) 10%, transparent); /* Fondo azul muy sutil */
-  transform: translateY(-3px); /* Pequeña elevación */
-  box-shadow: 0 4px 12px color-mix(in srgb, var(--accent-blue) 20%, transparent); /* Sombra suave (Glow) */
   color: var(--text-primary);
+  font-size: clamp(0.85rem, 1.1vw, 1rem);
+  font-weight: 500;
+
+  background-color: transparent;
+  border: 1px solid var(--border-subtle);
+  border-radius: 50px;
+  padding: 10px 20px;
+
+  transition: all 0.3s ease;
+  cursor: default;
 }
 
-/* --- RESPONSIVE --- */
-@media (max-width: 600px) {
-  .tags-container {
-    gap: 10px;
-  }
-  
-  .tag {
-    font-size: 0.9rem;
-    padding: 10px 16px;
-  }
-  
+.tag:hover {
+  border-color: var(--accent-blue);
+  background-color: color-mix(in srgb, var(--accent-blue) 10%, transparent);
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px color-mix(in srgb, var(--accent-blue) 20%, transparent);
 }
 
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+/* Tablet */
 @media (max-width: 900px) {
   .sections-container {
     grid-template-columns: 1fr;
-    gap: 30px;
+    gap: 20px;
+    margin-bottom: 50px;
   }
 
   .header-block {
@@ -99,5 +81,29 @@
 
   .subtitle {
     max-width: 100%;
+  }
+
+  .skills-section {
+    padding: 60px 6%;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .skills-section {
+    padding: 40px 5%;
+  }
+
+  .sections-container {
+    margin-bottom: 36px;
+  }
+
+  .tags-container {
+    gap: 8px;
+  }
+
+  .tag {
+    font-size: 0.85rem;
+    padding: 8px 16px;
   }
 }

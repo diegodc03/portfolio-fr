@@ -1,74 +1,77 @@
-/* Importamos una fuente gruesa de Google Fonts */
+/* ============================================================
+   TITLE-HEADER COMPONENT — title-header.css
+   ============================================================ */
 @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
 
-
-/* --- 1. SECCIÓN HERO --- */
+/* --- HERO CONTAINER --- */
 .hero-container {
-  /* ESTO ES LA CLAVE: 100vh = 100% del alto de la ventana visible */
-  min-height: 100vh; 
+  min-height: 100vh;
   width: 100%;
   color: var(--text-primary-title);
-  /* Flexbox para alinear el contenido dentro de esa pantalla completa */
+
   display: flex;
   flex-direction: column;
-  justify-content: center; /* Centra verticalmente (en el medio de la pantalla) */
-  
+  justify-content: center;
+
   position: relative;
   box-sizing: border-box;
-  padding: 0 20px; /* Un poco de margen a los lados */
+  padding: 0 6%;      /* responsive side padding, was fixed 20px */
+  overflow: hidden;   /* prevent any child from escaping */
 }
 
-
+/* Background image with overlay */
 .image-container {
-  background-image: 
-    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
     url("/foto.jpg");
-    
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
 
-
-
-/* La pequeña introducción (Tagline) */
+/* --- TAGLINE --- */
 .intro-tagline {
-  font-size: 2vw;
   font-family: 'Archivo Black', sans-serif;
+  font-size: clamp(0.9rem, 2.5vw, 1.6rem);  /* fluid, was fixed 2vw */
   line-height: 1.5;
-  margin-bottom: -20px; /* Truco: se mete un poco en el espacio del título */
-  z-index: 10;          /* Que quede por encima si se solapan */
-  padding-left: 5px;
+  margin-bottom: -16px;
+  z-index: 10;
+  padding-left: 4px;
   color: var(--gray-400);
 }
 
-/* El Título Gigante (Tu código anterior ajustado) */
-/* Estilos base del H1 */
+/* --- HERO TEXT --- */
 .hero-text h1 {
   font-family: 'Archivo Black', sans-serif;
-  
   text-transform: uppercase;
   font-weight: 900;
-  line-height: 0.85;
-
+  line-height: 0.9;
   margin: 0;
-  
-  /* AQUÍ ESTÁ LA MAGIA FLEXBOX */
+
   display: flex;
-  flex-direction: column; /* Por defecto: Vertical (dos líneas) */
-  align-items: flex-start; /* Alineado a la izquierda */
-  
-  /* Tamaño para móvil (grande) */
-  font-size: 15vw; 
+  flex-direction: column;   /* stacked by default */
+  align-items: flex-start;
+
+  /* Fluid scale: 10vw on mobile → capped at ~120px on wide screens */
+  font-size: clamp(3rem, 14vw, 9rem);
 }
 
-/* MEDIA QUERY: Para pantallas grandes (Escritorio/Laptop) */
+/* Desktop: side by side */
 @media (min-width: 1024px) {
   .hero-text h1 {
-    flex-direction: row; /* Horizontal (una línea) */
-    gap: 0.3em;          /* Espacio entre Nombre y Apellido */
-    
-    /* Ajustamos el tamaño para que quepa en una línea sin romperse */
-    font-size: 8vw;      
+    flex-direction: row;
+    gap: 0.25em;
+    font-size: clamp(4rem, 8vw, 9rem);
+  }
+}
+
+/* Ensure names never overflow on very small screens */
+@media (max-width: 400px) {
+  .hero-text h1 {
+    font-size: clamp(2.4rem, 12vw, 4rem);
+  }
+
+  .intro-tagline {
+    font-size: 0.85rem;
   }
 }

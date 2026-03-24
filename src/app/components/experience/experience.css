@@ -1,90 +1,142 @@
-/* --- ESTRUCTURA GENERAL (2 COLUMNAS) --- */
+/* ============================================================
+   EXPERIENCE COMPONENT — experience.css
+   ============================================================ */
+
+/* --- MAIN LAYOUT (2 → 3 column grid) --- */
 .main-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 40px;
   margin: 0 auto;
-  padding: 100px 12%;
+  padding: 80px 8%;          /* was 100px 12% */
+  box-sizing: border-box;
+  width: 100%;
 }
 
+/* Section headings */
 .section-title {
-  color: var(--accent-blue); /* Tu color azul */
+  color: var(--accent-blue);
   border-bottom: 2px solid var(--border-light);
   padding-bottom: 10px;
   margin-bottom: 30px;
-  font-size: 1.5rem;
+  font-size: clamp(1.1rem, 2vw, 1.5rem);
 }
 
-/* --- ESTILO DEL TIMELINE (REUTILIZADO) --- */
-
-/* Ajustamos el item para que funcione en columnas más estrechas */
+/* --- TIMELINE ITEMS --- */
 .timeline-item {
   display: grid;
+  grid-template-columns: 80px 1fr;   /* was 90px */
+  gap: 12px;
+  margin-bottom: 0;
   color: var(--text-primary);
-  /* Reducimos un poco el ancho de la fecha para que no coma espacio */
-  grid-template-columns: 90px 1fr; 
-  gap: 15px;
-  margin-bottom: 0; /* Quitamos márgenes extra */
 }
 
 .timeline-date {
   text-align: right;
   font-weight: bold;
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   padding-top: 22px;
+  color: var(--text-secondary);
+  white-space: nowrap;
 }
 
 .timeline-content {
-  padding-left: 25px; 
-  padding-bottom: 40px; 
+  padding-left: 22px;
+  padding-bottom: 36px;
   position: relative;
+  border-left: 2px solid var(--border-subtle);
 }
 
-/* El punto de la línea */
+/* Dot on the line */
 .timeline-content::before {
   content: '';
   position: absolute;
-  left: -7px;
-    top: 25px;
+  left: -6px;
+  top: 26px;
   width: 10px;
   height: 10px;
   border-radius: 50%;
+  background: var(--accent-blue);
   z-index: 1;
 }
 
-/* Quitar la línea del último elemento de CADA columna */
+/* Remove line from last item in each column */
 .timeline-item:last-child .timeline-content {
-  border-left-color: transparent; 
+  border-left-color: transparent;
 }
+
 .timeline-item:last-child .timeline-content::before {
-  border-color: var(--border-subtle); 
+  border: 2px solid var(--border-subtle);
+  background: transparent;
 }
 
-/* --- RESPONSIVE (MÓVIL) --- */
+/* Role & company text */
+.role    { margin: 0 0 4px; font-size: clamp(0.95rem, 1.3vw, 1.1rem); }
+.company { margin: 0 0 12px; color: var(--text-secondary); font-size: 0.9rem; }
+
+/* Task list */
+.task-list {
+  margin: 0 0 14px;
+  padding-left: 18px;
+  color: var(--text-secondary);
+  font-size: 0.88rem;
+  line-height: 1.7;
+}
+
+.task-list li { margin-bottom: 4px; }
+
+/* Tech stack tags */
+.tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 10px;
+}
+
+.tag {
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 20px;
+  border: 1px solid var(--accent-blue);
+  color: var(--accent-blue);
+  background: color-mix(in srgb, var(--accent-blue) 8%, transparent);
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+/* Tablet → 1 column */
 @media (max-width: 900px) {
-  /* En tablets y móviles, pasamos a 1 sola columna */
   .main-container {
-    grid-template-columns: 1fr; 
-    gap: 50px; /* Separar experiencia de voluntariado verticalmente */
-  }
-  
-  .timeline-item {
-     /* En móvil recuperamos espacio */
-    grid-template-columns: 100px 1fr;
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding: 60px 6%;
   }
 }
 
+/* Mobile → compact date layout */
 @media (max-width: 600px) {
-  /* En móviles pequeños, la fecha va arriba */
+  .main-container {
+    padding: 40px 5%;
+    gap: 32px;
+  }
+
   .timeline-item {
     grid-template-columns: 1fr;
-    gap: 5px;
+    gap: 4px;
   }
+
   .timeline-date {
     text-align: left;
-    margin-left: 25px;
+    padding-top: 0;
+    margin-left: 22px;
+    font-size: 0.75rem;
   }
+
   .timeline-content {
-      border-left: 2px solid var(--border-light);
+    border-left: 2px solid var(--border-light);
+    padding-bottom: 28px;
   }
 }
