@@ -1,5 +1,5 @@
 /* ============================================================
-   NAVBAR COMPONENT — navbar.css
+   NAVBAR COMPONENT — navbar.css (Actualizado)
    ============================================================ */
 
 .navbar {
@@ -7,17 +7,14 @@
   top: 20px;
   left: 50%;
   transform: translateX(-50%);
-  width: 90%;                  /* was 80% — more room on tablet */
+  width: 90%;
   max-width: 1200px;
-
   background-color: var(--bg-navbar);
   border-radius: 50px;
   padding: 10px 24px;
-
   display: flex;
   justify-content: space-between;
   align-items: center;
-
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
   z-index: 1000;
   transition: top 0.4s ease-in-out;
@@ -36,7 +33,7 @@
   flex-shrink: 0;
 }
 
-/* --- NAV LINKS (desktop) --- */
+/* --- NAV LINKS (Contenedor Principal) --- */
 .nav-links {
   list-style: none;
   padding: 0;
@@ -61,7 +58,12 @@
   color: var(--accent-cyan);
 }
 
-/* --- RIGHT ACTIONS --- */
+/* Elemento para ocultar las acciones en escritorio dentro del ul */
+.mobile-only-actions {
+  display: none;
+}
+
+/* --- RIGHT ACTIONS (Desktop) --- */
 .nav-actions {
   display: flex;
   align-items: center;
@@ -100,62 +102,53 @@
   font-size: 0.85rem;
 }
 
-/* --- HAMBURGER (hidden on desktop) --- */
+/* --- HAMBURGER --- */
 .hamburger {
   display: none;
-  font-size: 22px;
+  font-size: 28px;
   color: var(--text-primary);
   cursor: pointer;
   user-select: none;
+  z-index: 1100;
 }
 
 /* ============================================================
-   MOBILE — ≤ 768px
+   MOBILE — ≤ 768px (Ajustes para que entre todo)
    ============================================================ */
 @media (max-width: 768px) {
-
   .navbar {
     top: 12px;
-    width: 94%;
-    padding: 8px 18px;
+    width: 92%;
+    padding: 8px 20px;
+    border-radius: 30px;
   }
 
-  /* Show hamburger, hide desktop links */
   .hamburger {
     display: block;
-    z-index: 1100;
   }
 
-  /* Settings icons hidden on very small screens to save space */
-  .settings {
+  /* Ocultamos las acciones de la derecha para que no se amontonen con el logo */
+  .nav-actions .settings {
     display: none;
   }
 
-  /* Fullscreen dropdown overlay */
+  /* Menú desplegable a pantalla completa */
   .nav-links {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    height: auto;
-
-    background: color-mix(in srgb, var(--bg-navbar) 92%, transparent);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-
-    border-radius: 0 0 30px 30px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-
-    padding: 80px 0 30px; /* top padding leaves room for logo row */
-
+    height: 100vh;
+    background: color-mix(in srgb, var(--bg-navbar) 98%, black);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
     flex-direction: column;
-    align-items: center;
-    gap: 8px;
-
-    /* Start hidden above viewport */
+    justify-content: center;
+    gap: 15px;
     transform: translateY(-100%);
-    transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     z-index: 900;
+    padding: 0;
   }
 
   .nav-links.active {
@@ -165,26 +158,57 @@
   .nav-links li {
     width: 100%;
     text-align: center;
-  }
-
-  .nav-links a {
-    font-size: 1.2rem;
-    display: block;
-    padding: 12px 0;
     opacity: 0;
-    transform: translateY(-10px);
-    transition: opacity 0.25s ease, transform 0.25s ease;
+    transform: translateY(-20px);
+    transition: all 0.3s ease;
   }
 
-  .nav-links.active a {
+  .nav-links.active li {
     opacity: 1;
     transform: translateY(0);
-    transition-delay: 0.15s;
   }
 
-  /* Show settings as row inside open menu */
-  .nav-links.active ~ .nav-actions .settings {
+  /* Delay escalonado para los links */
+  .nav-links.active li:nth-child(1) { transition-delay: 0.1s; }
+  .nav-links.active li:nth-child(2) { transition-delay: 0.15s; }
+  .nav-links.active li:nth-child(3) { transition-delay: 0.2s; }
+  .nav-links.active li:nth-child(4) { transition-delay: 0.25s; }
+  .nav-links.active li:nth-child(5) { transition-delay: 0.3s; }
+  .nav-links.active li:nth-child(6) { transition-delay: 0.35s; }
+  .nav-links.active li:nth-child(7) { transition-delay: 0.4s; }
+
+  .nav-links a {
+    font-size: 1.5rem;
+    padding: 15px 0;
+    display: block;
+  }
+
+  /* --- ACCIONES DENTRO DEL MENÚ MÓVIL --- */
+  .mobile-only-actions {
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+  }
+
+  .menu-divider {
+    width: 40%;
+    height: 1px;
+    background: var(--border-subtle);
+    border: none;
+    margin-bottom: 25px;
+  }
+
+  .settings-mobile {
+    display: flex;
+    gap: 20px;
+  }
+
+  .settings-mobile .icon-btn {
+    width: 50px;
+    height: 50px;
+    font-size: 1.4rem;
+    background-color: color-mix(in srgb, var(--text-primary) 15%, transparent);
   }
 }
 
@@ -194,5 +218,9 @@
 @media (max-width: 480px) {
   .logo {
     font-size: 1.1rem;
+  }
+  
+  .navbar {
+    width: 95%;
   }
 }

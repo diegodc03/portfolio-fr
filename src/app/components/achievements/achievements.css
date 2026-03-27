@@ -168,3 +168,37 @@
 }
 
 
+/* --- AJUSTES PARA MÓVIL --- */
+@media (max-width: 768px) {
+  .section-general {
+    padding: 40px 5%; /* Reducimos el margen lateral drásticamente */
+  }
+
+  .grid-container {
+    /* Bajamos el minmax para que quepa en pantallas de 320px */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+    gap: 20px;
+  }
+
+  .folder-body {
+    min-width: unset; /* Quitamos el ancho mínimo fijo */
+    width: 100%;
+    padding: 15px; /* Menos padding interno */
+    border-radius: 0 20px 20px 20px;
+  }
+
+  .card {
+    max-width: 100%; /* La tarjeta ocupa todo el ancho del folder */
+    height: auto;
+    padding: 10px 0;
+  }
+
+  .folder-tab {
+    width: 140px; /* Pestaña un poco más pequeña */
+    font-size: 0.8rem;
+  }
+
+  .title-section-black, .title-section-white {
+    font-size: 1.4rem; /* Título más pequeño para que no rompa */
+  }
+}

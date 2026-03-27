@@ -1,8 +1,5 @@
 <nav class="navbar" [class.nav-hidden]="!menuVisible()">
-    
-    <div class="logo">
-        DIEGO
-    </div>
+    <div class="logo">DIEGO</div>
 
     <ul class="nav-links" [class.active]="menuAbierto()">
         <li><a (click)="irASeccion('inicio')">Inicio</a></li>
@@ -11,21 +8,30 @@
         <li><a (click)="irASeccion('logros')">Logros</a></li>
         <li><a (click)="irASeccion('experiencia')">Experiencia</a></li>
         <li><a (click)="irASeccion('contacto')">Contacto</a></li>
+
+        <li class="mobile-only-actions">
+            <hr class="menu-divider">
+            <div class="settings-mobile">
+                <button class="icon-btn" routerLink="/photosPortfolio" (click)="toggleMenu()">
+                    <span class="material-symbols-outlined">camera_roll</span>
+                </button>
+                <button class="icon-btn" (click)="toggleTheme()">
+                    {{ darkIconBool() ? '🌙' : '☀️' }}
+                </button>
+                <button class="icon-btn text-btn" (click)="toggleLanguage()">
+                    {{ currentLang() }}
+                </button>
+            </div>
+        </li>
     </ul>
 
     <div class="nav-actions">
-        <div class="settings">
+        <div class="settings desktop-only">
             <button class="icon-btn text-btn" routerLink="/photosPortfolio" title="Fotografia">
-                <span class="material-symbols-outlined">
-                    camera_roll
-                </span>
+                <span class="material-symbols-outlined">camera_roll</span>
             </button>
             <button class="icon-btn" title="Cambiar tema" (click)="toggleTheme()">
-                @if (darkIconBool()) {
-                    🌙
-                } @else {
-                    ☀️
-                }
+                {{ darkIconBool() ? '🌙' : '☀️' }}
             </button>
             <button class="icon-btn text-btn" (click)="toggleLanguage()" title="Cambiar idioma">
                 {{ currentLang() }}
@@ -33,8 +39,7 @@
         </div>
         
         <div class="hamburger" (click)="toggleMenu()">
-            <span>☰</span>
+            <span class="material-symbols-outlined">{{ menuAbierto() ? 'close' : 'menu' }}</span>
         </div>
     </div>
-    
 </nav>
